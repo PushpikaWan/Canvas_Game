@@ -16,7 +16,11 @@
             </intent-filter>
         </activity>
         <activity android:name=".AnimationActivity" />
-        <activity android:name=".Question_view"></activity>
+        <activity android:name=".Question_view" />
+        <activity
+            android:name=".database_data_entry_initial"
+            android:label="@string/title_activity_database_data_entry_initial"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 
 </manifest>

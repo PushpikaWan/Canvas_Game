@@ -69,8 +69,8 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     public boolean insert_Tag(String tag_name,String tag_type,String tag_desc ){
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
-        contentValues.put(COLUMN_TAG_NAME,tag_name);
-        contentValues.put(COLUMN_TAG_TYPE,tag_type);
+        contentValues.put(COLUMN_TAG_NAME, tag_name);
+        contentValues.put(COLUMN_TAG_TYPE, tag_type);
         contentValues.put(COLUMN_TAG_DESC, tag_desc);
         long result =  db.insert(TABLE_NAME_TAG,null,contentValues);
         if (result ==-1){
@@ -117,7 +117,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         ContentValues contentValues = new ContentValues();
         contentValues.put(COLUMN_QUESTION_ID,question_id);
         contentValues.put(COLUMN_TAG_ID,tag_id);
-        long result =  db.insert(TABLE_LOG,null,contentValues);
+        long result =  db.insert(TABLE_TAG_QUE_ASSIST,null,contentValues);
         if (result ==-1){
             return false;
         }
@@ -128,9 +128,18 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
 
 
-    public Cursor get_data(String Table_name){
+    public Cursor get_data_from_keywords(){
         SQLiteDatabase db = this.getWritableDatabase();
-        Cursor res= db.rawQuery("SELECT * FROM "+Table_name,null);
+        String sql="SELECT Name_tag.* FROM Name_tag LEFT OUTER JOIN Tag_que_assist ON Name_tag.Tag_ID=Tag_que_assist.Tag_ID WHERE Name_tag.Tag_Type='KEYWORD';";
+        Cursor res= db.rawQuery(sql,null);
         return res;
     }
+
+    public Cursor get_field_data(){
+        SQLiteDatabase db = this.getWritableDatabase();
+        String sql="SELECT Name_tag.* FROM Name_tag LEFT OUTER JOIN Tag_que_assist ON Name_tag.Tag_ID=Tag_que_assist.Tag_ID WHERE Name_tag.Tag_Type='VARIABLE';";
+        Cursor res= db.rawQuery(sql,null);
+        return res;
+    }
+
 }
