@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">Canvas_Game</string>
+    <string name="title_activity_problem_view">Problem_view</string>
+</resources>
