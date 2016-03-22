@@ -14,9 +14,9 @@ import java.util.FormatFlagsConversionMismatchException;
  */
 public class DatabaseHelper extends SQLiteOpenHelper {
 
-    public static final String DATABASE_NAME = "board_game_db";
+    public static final String DATABASE_NAME = "board_game_db_new";
     public static final String TABLE_NAME_TAG = "Name_tag";
-    public static final String TABLE_QUESTIOn= "Question";
+    public static final String TABLE_QUESTION= "Question";
     public static final String TABLE_LOG = "log";
     public static final String TABLE_TAG_QUE_ASSIST = "Tag_que_assist";
 
@@ -52,21 +52,26 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     @Override
     public void onCreate(SQLiteDatabase db) {
         db.execSQL("CREATE TABLE IF NOT EXISTS " + TABLE_NAME_TAG + " ( Tag_ID INTEGER PRIMARY KEY AUTOINCREMENT, Tag_Name VARCHAR(20) , Tag_Type VARCHAR(20) , Tag_DESC VARCHAR(100) ); ");
-
+        db.execSQL("CREATE TABLE IF NOT EXISTS " + TABLE_QUESTION + " ( Question_ID  INTEGER PRIMARY KEY AUTOINCREMENT, Question_class VARCHAR(5) , Answer_Sequence VARCHAR(100) ); ");
+        db.execSQL("CREATE TABLE IF NOT EXISTS " + TABLE_LOG + " ( Log_ID INTEGER PRIMARY KEY AUTOINCREMENT, Question_ID INTEGER , Status VARCHAR(20) , Position VARCHAR(10) ); ");
+        db.execSQL("CREATE TABLE IF NOT EXISTS " + TABLE_TAG_QUE_ASSIST + " (Question_ID INTEGER , Tag_ID INTEGER, PRIMARY KEY(Question_ID,Tag_ID)); ");
     }
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
         db.execSQL("DROP TABLE IF EXISTS "+ TABLE_NAME_TAG);
+        db.execSQL("DROP TABLE IF EXISTS "+ TABLE_QUESTION);
+        db.execSQL("DROP TABLE IF EXISTS "+ TABLE_LOG);
+        db.execSQL("DROP TABLE IF EXISTS "+ TABLE_TAG_QUE_ASSIST);
         onCreate(db);
     }
 
-    public boolean insert_data(){
+    public boolean insert_Tag(String tag_name,String tag_type,String tag_desc ){
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
-        contentValues.put(COLUMN_TAG_NAME,"if");
-        contentValues.put(COLUMN_TAG_TYPE,"KEYWORD");
-        contentValues.put(COLUMN_TAG_DESC, "if is an important key word");
+        contentValues.put(COLUMN_TAG_NAME,tag_name);
+        contentValues.put(COLUMN_TAG_TYPE,tag_type);
+        contentValues.put(COLUMN_TAG_DESC, tag_desc);
         long result =  db.insert(TABLE_NAME_TAG,null,contentValues);
         if (result ==-1){
             return false;
@@ -74,7 +79,54 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         else{
             return true;
         }
+
     }
+
+    public boolean insert_Question(String question_class,String answer_sequence){
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues contentValues = new ContentValues();
+        //contentValues.put(COLUMN_QUESTION_ID,question_ID);
+        contentValues.put(COLUMN_QUESTION_CLASS,question_class);
+        contentValues.put(COLUMN_ANSWER_SEQUENCE,answer_sequence);
+        long result =  db.insert(TABLE_QUESTION,null,contentValues);
+        if (result ==-1){
+            return false;
+        }
+        else{
+            return true;
+        }
+
+    }
+    public boolean insert_Log(String question_id , String status,String position){
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues contentValues = new ContentValues();
+        contentValues.put(COLUMN_QUESTION_ID,question_id);
+        contentValues.put(COLUMN_STATUS,status);
+        contentValues.put(COLUMN_POSITION,position);
+        long result =  db.insert(TABLE_LOG,null,contentValues);
+        if (result ==-1){
+            return false;
+        }
+        else{
+            return true;
+        }
+    }
+
+    public boolean insert_tag_que_assist(int question_id , int tag_id){
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues contentValues = new ContentValues();
+        contentValues.put(COLUMN_QUESTION_ID,question_id);
+        contentValues.put(COLUMN_TAG_ID,tag_id);
+        long result =  db.insert(TABLE_LOG,null,contentValues);
+        if (result ==-1){
+            return false;
+        }
+        else{
+            return true;
+        }
+    }
+
+
 
     public Cursor get_data(String Table_name){
         SQLiteDatabase db = this.getWritableDatabase();
