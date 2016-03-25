@@ -16,7 +16,7 @@ import java.util.FormatFlagsConversionMismatchException;
  */
 public class DatabaseHelper extends SQLiteOpenHelper {
 
-    public static final String DATABASE_NAME = "board_game_db_new";
+    public static final String DATABASE_NAME = "game_db";
     public static final String TABLE_NAME_TAG = "Name_tag";
     public static final String TABLE_QUESTION= "Question";
     public static final String TABLE_LOG = "log";
@@ -30,6 +30,8 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
     //Question table
     public static final String COLUMN_QUESTION_ID = "Question_ID";
+    public static final String COLUMN_QUESTION_TOPIC = "Question_Topic";
+    public static final String COLUMN_QUESTION_DESC = "Question_Desc";
     public static final String COLUMN_QUESTION_CLASS = "Question_class";
     public static final String COLUMN_ANSWER_SEQUENCE = "Answer_Sequence";
 
@@ -54,7 +56,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     @Override
     public void onCreate(SQLiteDatabase db) {
         db.execSQL("CREATE TABLE IF NOT EXISTS " + TABLE_NAME_TAG + " ( Tag_ID INTEGER PRIMARY KEY AUTOINCREMENT, Tag_Name VARCHAR(20) , Tag_Type VARCHAR(20) , Tag_DESC VARCHAR(100) ); ");
-        db.execSQL("CREATE TABLE IF NOT EXISTS " + TABLE_QUESTION + " ( Question_ID  INTEGER PRIMARY KEY AUTOINCREMENT, Question_class VARCHAR(5) , Answer_Sequence VARCHAR(100) ); ");
+        db.execSQL("CREATE TABLE IF NOT EXISTS " + TABLE_QUESTION + " ( Question_ID  INTEGER PRIMARY KEY AUTOINCREMENT,Question_topic VARCHAR(30),Question_desc VARCHAR(1000) , Question_class VARCHAR(5) , Answer_Sequence VARCHAR(100) ); ");
         db.execSQL("CREATE TABLE IF NOT EXISTS " + TABLE_LOG + " ( Log_ID INTEGER PRIMARY KEY AUTOINCREMENT, Question_ID INTEGER , Status VARCHAR(20) , Position VARCHAR(10) ); ");
         db.execSQL("CREATE TABLE IF NOT EXISTS " + TABLE_TAG_QUE_ASSIST + " (Question_ID INTEGER , Tag_ID INTEGER, PRIMARY KEY(Question_ID,Tag_ID)); ");
     }
@@ -84,10 +86,11 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
     }
 
-    public boolean insert_Question(String question_class,String answer_sequence){
+    public boolean insert_Question(String question_topic,String question_desc,String question_class,String answer_sequence){
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
-        //contentValues.put(COLUMN_QUESTION_ID,question_ID);
+        contentValues.put(COLUMN_QUESTION_TOPIC,question_topic);
+        contentValues.put(COLUMN_QUESTION_DESC,question_desc);
         contentValues.put(COLUMN_QUESTION_CLASS,question_class);
         contentValues.put(COLUMN_ANSWER_SEQUENCE,answer_sequence);
         long result =  db.insert(TABLE_QUESTION,null,contentValues);
@@ -150,7 +153,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         }
 
         //then use selected question id for queries..
-        String sql2="SELECT Name_tag.* FROM Name_tag LEFT OUTER JOIN Tag_que_assist ON Name_tag.Tag_ID=Tag_que_assist.Tag_ID WHERE Name_tag.Tag_Type='KEYWORD' AND Tag_que_assist.Question_ID = "+ question_id +" ;";
+        String sql2="SELECT Name_tag.* FROM Name_tag LEFT OUTER JOIN Tag_que_assist ON Name_tag.Tag_ID=Tag_que_assist.Tag_ID WHERE Name_tag.Tag_Type='MAIN' AND Tag_que_assist.Question_ID = "+ question_id +" ;";
         Cursor res2= db.rawQuery(sql2,null);
         String[] Keyword_array = null;
 
