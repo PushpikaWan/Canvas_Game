@@ -53,18 +53,44 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/text1"
+            android:enabled="false"
+            android:editable="false" />
 
-            />
 
-        <Button android:id="@+id/bRegister" style="?android:textAppearanceSmall"
 
+        <LinearLayout
+            android:orientation="horizontal"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:text="Check"
-            android:textStyle="bold"
-            android:textColor="#fff"
-            android:background="#46dadc"/>
+            android:layout_height="match_parent"
+            android:layout_gravity="bottom">
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Reset"
+                android:id="@+id/button3"
+                android:layout_gravity="center_horizontal"
+                android:background="#cc2121"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="5dp"
+                android:textColor="#ffffff"
+                android:layout_weight="1"
+                android:onClick="reset_text"
+                />
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Check"
+                android:id="@+id/button2"
+                android:background="#46dadc"
+                android:layout_marginLeft="5dp"
+                android:textColor="#ffffff"
+                android:layout_weight="1"
+                android:onClick="check_answer"/>
+
+
+        </LinearLayout>
 
     </LinearLayout>
     </ScrollView>

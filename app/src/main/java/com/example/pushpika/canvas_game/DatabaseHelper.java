@@ -2,10 +2,12 @@ package com.example.pushpika.canvas_game;
 
 import android.content.ContentValues;
 import android.content.Context;
+import android.content.Intent;
 import android.database.Cursor;
 import android.database.DatabaseErrorHandler;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+import android.widget.Toast;
 
 import java.util.FormatFlagsConversionMismatchException;
 
@@ -44,7 +46,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
 
     public DatabaseHelper(Context context) {
-        super(context, DATABASE_NAME,null,1);
+        super(context, DATABASE_NAME, null, 1);
         //SQLiteDatabase db = this.getWritableDatabase();
 
     }
@@ -60,9 +62,9 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
         db.execSQL("DROP TABLE IF EXISTS "+ TABLE_NAME_TAG);
-        db.execSQL("DROP TABLE IF EXISTS "+ TABLE_QUESTION);
-        db.execSQL("DROP TABLE IF EXISTS "+ TABLE_LOG);
-        db.execSQL("DROP TABLE IF EXISTS "+ TABLE_TAG_QUE_ASSIST);
+        db.execSQL("DROP TABLE IF EXISTS " + TABLE_QUESTION);
+        db.execSQL("DROP TABLE IF EXISTS " + TABLE_LOG);
+        db.execSQL("DROP TABLE IF EXISTS " + TABLE_TAG_QUE_ASSIST);
         onCreate(db);
     }
 
@@ -128,18 +130,63 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
 
 
-    public Cursor get_data_from_keywords(){
+    public Question_object get_data_object(String question_class){
         SQLiteDatabase db = this.getWritableDatabase();
-        String sql="SELECT Name_tag.* FROM Name_tag LEFT OUTER JOIN Tag_que_assist ON Name_tag.Tag_ID=Tag_que_assist.Tag_ID WHERE Name_tag.Tag_Type='KEYWORD';";
-        Cursor res= db.rawQuery(sql,null);
-        return res;
-    }
+        String sql1="SELECT * FROM Question where Question_class='"+question_class+"';";
+        Cursor res1= db.rawQuery(sql1, null);
 
-    public Cursor get_field_data(){
-        SQLiteDatabase db = this.getWritableDatabase();
-        String sql="SELECT Name_tag.* FROM Name_tag LEFT OUTER JOIN Tag_que_assist ON Name_tag.Tag_ID=Tag_que_assist.Tag_ID WHERE Name_tag.Tag_Type='VARIABLE';";
-        Cursor res= db.rawQuery(sql,null);
-        return res;
+        //select random question id from question class
+        int question_id=-1; //default value
+        String answer_sequence=null;
+
+        if (res1.getCount()==0){
+            //Toast.makeText(DatabaseHelper.this, "Nothing to show", Toast.LENGTH_LONG).show();
+            //return null;
+        }
+        StringBuffer buffer = new StringBuffer();
+        while (res1.moveToNext()){
+            question_id=Integer.parseInt(res1.getString(0));
+            answer_sequence=res1.getString(2);
+        }
+
+        //then use selected question id for queries..
+        String sql2="SELECT Name_tag.* FROM Name_tag LEFT OUTER JOIN Tag_que_assist ON Name_tag.Tag_ID=Tag_que_assist.Tag_ID WHERE Name_tag.Tag_Type='KEYWORD' AND Tag_que_assist.Question_ID = "+ question_id +" ;";
+        Cursor res2= db.rawQuery(sql2,null);
+        String[] Keyword_array = null;
+
+        if (res2.getCount()!=0) {
+            //Toast.makeText(DatabaseHelper.this, "Nothing to show", Toast.LENGTH_LONG).show();
+            Keyword_array = new String[res2.getCount()];
+            int i = 0;
+            while (res2.moveToNext()) {
+                Keyword_array[i] = res2.getString(1); //name of the tag
+                i++;
+            }
+        }
+        //create variable array
+        String sql3="SELECT Name_tag.* FROM Name_tag LEFT OUTER JOIN Tag_que_assist ON Name_tag.Tag_ID=Tag_que_assist.Tag_ID WHERE Name_tag.Tag_Type='VARIABLE' AND Tag_que_assist.Question_ID = "+ question_id+" ;";
+        Cursor res3= db.rawQuery(sql3,null);
+
+        String[] Variable_array = null;
+
+        if (res3.getCount()!=0) {
+
+            Variable_array = new String[res2.getCount()];
+            int j = 0;
+            while (res3.moveToNext()) {
+                Variable_array[j] = res3.getString(1); //name of the tag
+                j++;
+            }
+        }
+
+
+
+        //String [] arr1 = {"if","else","is_prime","Yeah","done"};
+        //String [] arr2 = {"if","else","is_prime","Yeah","done","x","Y","Z"};
+        //Question_object question_object = new Question_object(arr1,arr2,"1,2,42,3,2,2",1);
+        //return question_object;
+        return new Question_object(Keyword_array,Variable_array,answer_sequence,question_id);
+
     }
 
 }
