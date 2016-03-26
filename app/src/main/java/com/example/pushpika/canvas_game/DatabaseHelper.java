@@ -22,6 +22,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     public static final String TABLE_LOG = "log";
     public static final String TABLE_TAG_QUE_ASSIST = "Tag_que_assist";
 
+
     //Tag name table
     public static final String COLUMN_TAG_ID = "Tag_ID";
     public static final String COLUMN_TAG_NAME = "Tag_Name";
@@ -34,6 +35,9 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     public static final String COLUMN_QUESTION_DESC = "Question_Desc";
     public static final String COLUMN_QUESTION_CLASS = "Question_class";
     public static final String COLUMN_ANSWER_SEQUENCE = "Answer_Sequence";
+    public static final String COLUMN_START_NODE = "Start_Node";
+    public static final String COLUMN_PROMOTION_NODE = "Promotion_Node";
+    public static final String COLUMN_PUNISHMENT_NODE = "Punishment_Node";
 
     //Log table
     public static final String COLUMN_LOG_ID = "Log_ID";
@@ -57,7 +61,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     public void onCreate(SQLiteDatabase db) {
         db.execSQL("CREATE TABLE IF NOT EXISTS " + TABLE_NAME_TAG + " ( Tag_ID INTEGER PRIMARY KEY AUTOINCREMENT, Tag_Name VARCHAR(20) , Tag_Type VARCHAR(20) , Tag_DESC VARCHAR(100) ); ");
         db.execSQL("CREATE TABLE IF NOT EXISTS " + TABLE_QUESTION + " ( Question_ID  INTEGER PRIMARY KEY AUTOINCREMENT,Question_topic VARCHAR(30),Question_desc VARCHAR(1000) , Question_class VARCHAR(5) , Answer_Sequence VARCHAR(100) ); ");
-        db.execSQL("CREATE TABLE IF NOT EXISTS " + TABLE_LOG + " ( Log_ID INTEGER PRIMARY KEY AUTOINCREMENT, Question_ID INTEGER , Status VARCHAR(20) , Position VARCHAR(10) ); ");
+        db.execSQL("CREATE TABLE IF NOT EXISTS " + TABLE_LOG + " ( Log_ID INTEGER PRIMARY KEY AUTOINCREMENT, Question_ID INTEGER , Status VARCHAR(20) , Position VARCHAR(10), Start_node INTEGER , Promotion_node INTEGER,Punishment_node INTEGER ); ");
         db.execSQL("CREATE TABLE IF NOT EXISTS " + TABLE_TAG_QUE_ASSIST + " (Question_ID INTEGER , Tag_ID INTEGER, PRIMARY KEY(Question_ID,Tag_ID)); ");
     }
 
@@ -86,13 +90,16 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
     }
 
-    public boolean insert_Question(String question_topic,String question_desc,String question_class,String answer_sequence){
+    public boolean insert_Question(String question_topic,String question_desc,String question_class,String answer_sequence,String start_node,String promotion_node, String punishment_node){
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
         contentValues.put(COLUMN_QUESTION_TOPIC,question_topic);
         contentValues.put(COLUMN_QUESTION_DESC,question_desc);
         contentValues.put(COLUMN_QUESTION_CLASS,question_class);
         contentValues.put(COLUMN_ANSWER_SEQUENCE,answer_sequence);
+        contentValues.put(COLUMN_START_NODE,start_node);
+        contentValues.put(COLUMN_PROMOTION_NODE,promotion_node);
+        contentValues.put(COLUMN_PUNISHMENT_NODE,punishment_node);
         long result =  db.insert(TABLE_QUESTION,null,contentValues);
         if (result ==-1){
             return false;

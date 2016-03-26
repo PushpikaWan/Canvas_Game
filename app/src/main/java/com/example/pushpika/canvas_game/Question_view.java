@@ -152,6 +152,7 @@ public class Question_view extends AppCompatActivity {
                     , null));
             settingsDialog.show();
             textView.setBackgroundColor(Color.GREEN);
+            increment_board();
         }
         else{
             //return false
@@ -161,7 +162,16 @@ public class Question_view extends AppCompatActivity {
                     , null));
             settingsDialog.show();
             textView.setBackgroundColor(Color.RED);
+            decrement_board();
         }
+    }
+
+    public void increment_board(){
+
+    }
+
+    public void decrement_board(){
+
     }
 
 }
