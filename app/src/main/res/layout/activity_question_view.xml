@@ -7,13 +7,16 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="com.example.pushpika.canvas_game.Question_view">
+    tools:context="com.example.pushpika.canvas_game.Question_view"
+    android:orientation="vertical">
+
 
     <LinearLayout
+        android:orientation="horizontal"
         android:layout_width="match_parent"
         android:layout_height="40dp"
-        android:background="#875"
-        android:id="@+id/position_field">
+        android:id="@+id/position_field"
+        android:layout_marginBottom="10dp">
 
         <TextView
             android:layout_width="match_parent"
@@ -21,15 +24,32 @@
             android:text="Position"
             android:textSize="20dp"
             android:textAlignment="center"
+            android:background="#864"
+            android:layout_weight="1"
             />
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Question"
+            android:id="@+id/button_question"
+            android:background="#ff0"
+            android:layout_marginLeft="5dp"
+            android:textColor="#ffffff"
+            android:layout_weight="3"
+            android:onClick="view_question"/>
+
+
     </LinearLayout>
+
     <LinearLayout
         android:layout_below="@+id/position_field"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/compulsary_words"
         android:orientation="vertical"
-        android:background="#b00">
+        android:background="#b00"
+        android:layout_marginBottom="5dp">
     </LinearLayout>
 
     <LinearLayout
@@ -38,7 +58,8 @@
         android:layout_height="wrap_content"
         android:id="@+id/optional_words"
         android:orientation="vertical"
-        android:background="#0b0">
+        android:background="#0b0"
+        android:layout_marginBottom="5dp">
     </LinearLayout>
 
     <ScrollView android:id="@+id/login_form" android:layout_width="match_parent"
@@ -53,7 +74,6 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/text1"
-            android:enabled="false"
             android:editable="false" />
 
 
@@ -71,9 +91,8 @@
                 android:id="@+id/button3"
                 android:layout_gravity="center_horizontal"
                 android:background="#cc2121"
-                android:layout_marginLeft="10dp"
-                android:layout_marginRight="5dp"
                 android:textColor="#ffffff"
+                android:layout_marginRight="10dp"
                 android:layout_weight="1"
                 android:onClick="reset_text"
                 />
@@ -84,7 +103,7 @@
                 android:text="Check"
                 android:id="@+id/button2"
                 android:background="#46dadc"
-                android:layout_marginLeft="5dp"
+                android:layout_marginLeft="10dp"
                 android:textColor="#ffffff"
                 android:layout_weight="1"
                 android:onClick="check_answer"/>

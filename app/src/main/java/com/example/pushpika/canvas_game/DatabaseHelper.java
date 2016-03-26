@@ -141,6 +141,8 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         //select random question id from question class
         int question_id=-1; //default value
         String answer_sequence=null;
+        String question_topic = null;
+        String question_desc = null;
 
         if (res1.getCount()==0){
             //Toast.makeText(DatabaseHelper.this, "Nothing to show", Toast.LENGTH_LONG).show();
@@ -149,19 +151,24 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         StringBuffer buffer = new StringBuffer();
         while (res1.moveToNext()){
             question_id=Integer.parseInt(res1.getString(0));
-            answer_sequence=res1.getString(2);
+            question_topic = res1.getString(1);
+            question_desc = res1.getString(2);// 3 is a class name
+            answer_sequence=res1.getString(4);
         }
 
         //then use selected question id for queries..
         String sql2="SELECT Name_tag.* FROM Name_tag LEFT OUTER JOIN Tag_que_assist ON Name_tag.Tag_ID=Tag_que_assist.Tag_ID WHERE Name_tag.Tag_Type='MAIN' AND Tag_que_assist.Question_ID = "+ question_id +" ;";
         Cursor res2= db.rawQuery(sql2,null);
-        String[] Keyword_array = null;
+        String[] Keyword_array = null,Keyword_id_array=null;
+
 
         if (res2.getCount()!=0) {
             //Toast.makeText(DatabaseHelper.this, "Nothing to show", Toast.LENGTH_LONG).show();
             Keyword_array = new String[res2.getCount()];
+            Keyword_id_array = new String[res2.getCount()];
             int i = 0;
             while (res2.moveToNext()) {
+                Keyword_id_array[i]=String.valueOf(res2.getInt(0));
                 Keyword_array[i] = res2.getString(1); //name of the tag
                 i++;
             }
@@ -170,13 +177,15 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         String sql3="SELECT Name_tag.* FROM Name_tag LEFT OUTER JOIN Tag_que_assist ON Name_tag.Tag_ID=Tag_que_assist.Tag_ID WHERE Name_tag.Tag_Type='VARIABLE' AND Tag_que_assist.Question_ID = "+ question_id+" ;";
         Cursor res3= db.rawQuery(sql3,null);
 
-        String[] Variable_array = null;
+        String[] Variable_array = null,variable_id_array=null;
 
         if (res3.getCount()!=0) {
 
-            Variable_array = new String[res2.getCount()];
+            Variable_array = new String[res3.getCount()];
+            variable_id_array = new String[res3.getCount()];
             int j = 0;
             while (res3.moveToNext()) {
+                variable_id_array[j]=String.valueOf(res3.getInt(0));
                 Variable_array[j] = res3.getString(1); //name of the tag
                 j++;
             }
@@ -184,11 +193,11 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
 
 
-        //String [] arr1 = {"if","else","is_prime","Yeah","done"};
+        //String [] arr1 = {"4","5"};
         //String [] arr2 = {"if","else","is_prime","Yeah","done","x","Y","Z"};
         //Question_object question_object = new Question_object(arr1,arr2,"1,2,42,3,2,2",1);
         //return question_object;
-        return new Question_object(Keyword_array,Variable_array,answer_sequence,question_id);
+        return new Question_object(Keyword_id_array,Keyword_array,variable_id_array,Variable_array,question_topic,question_desc,answer_sequence,question_id);
 
     }
 
