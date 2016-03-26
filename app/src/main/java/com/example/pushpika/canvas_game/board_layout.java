@@ -25,7 +25,7 @@ public class board_layout extends View {
     int current_position,target_position;
     public board_layout(Context context) {
         super(context);
-        setBackgroundResource(R.drawable.board);
+        setBackgroundResource(R.drawable.boardnew);
         x_dir = 50;
         y_dir = 50;
     }
@@ -50,8 +50,18 @@ public class board_layout extends View {
 
 
         if (AnimationActivity.position_height==0 && AnimationActivity.position_width==0){ //if variable doesn't initalize
-            AnimationActivity.position_height = (int) Math.ceil((canvas.getHeight()/10*8+(canvas.getHeight()/50)));   //
-            AnimationActivity.position_width = (int) Math.ceil((canvas.getWidth())/10*7+(canvas.getWidth()/100)); //width ok
+            int numbers[] ={0,1,2,3,4,5,6,7,8,9};
+            int x,y;
+            y=10 -(int) Math.ceil(AnimationActivity.current_pos/10.00);
+            if(y%2!=0){ //10,30,50...
+                x=(AnimationActivity.current_pos%10)-1;
+            }
+            else{
+                x=10 -(AnimationActivity.current_pos%10);
+            }
+            Log.v("happened x and y",String.valueOf(x)+" and "+ String.valueOf(y));
+            AnimationActivity.position_height = (int) Math.ceil((canvas.getHeight()/10*y+(canvas.getHeight()/50)));   //
+            AnimationActivity.position_width = (int) Math.ceil((canvas.getWidth())/10*x+(canvas.getWidth()/100)); //width ok
         }
 
         //create transition sequence
@@ -126,7 +136,7 @@ public class board_layout extends View {
             AnimationActivity.position_width = AnimationActivity.position_width - (int) Math.ceil((canvas.getWidth()) / 10 * 1);
         }
 
-        canvas.drawBitmap(black_circle,AnimationActivity.position_width,AnimationActivity.position_height, null);
+        canvas.drawBitmap(black_circle, AnimationActivity.position_width, AnimationActivity.position_height, null);
 
         move=move+1;
         AnimationActivity.is_increment=-1; //loop closed
