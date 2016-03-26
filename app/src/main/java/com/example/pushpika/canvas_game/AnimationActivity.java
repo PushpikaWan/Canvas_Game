@@ -11,7 +11,7 @@ import android.view.View;
 public class AnimationActivity extends AppCompatActivity {
     //Activity_animation_layout activity_animation_layout;
     board_layout bd_layout;
-    public static int position_width=0,position_height=0,cur_position=1,is_increment=0,current_pos=13,target_pos=7;
+    public static int position_width=0,position_height=0,cur_position=1,is_increment=0,current_pos=13,target_pos=8;
 
 
     @Override

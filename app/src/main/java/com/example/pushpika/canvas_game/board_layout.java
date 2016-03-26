@@ -67,7 +67,7 @@ public class board_layout extends View {
                         Log.v("happened move",  "1 forward");
                     } else { //move backward
                         move_backword += 1;
-                        transition_sequence[i] = "F";
+                        transition_sequence[i] = "B";
                         Log.v("happened move",  "1 backward");
                     }
                 } else { //move upward
@@ -85,7 +85,7 @@ public class board_layout extends View {
             int j = 0;
             while (AnimationActivity.current_pos - 1 >= AnimationActivity.target_pos) {
                 if ((AnimationActivity.current_pos - 1) % 10 != 0) {
-                    if ((int) Math.floor(AnimationActivity.current_pos / 10) % 2 != 0) { //move forward
+                    if ((int) Math.floor((AnimationActivity.current_pos-1)/ 10) % 2 != 0) { //move forward
                         move_forward += 1;
                         transition_sequence[j] = "F";
                         Log.v("happened move",  "1 forward");
