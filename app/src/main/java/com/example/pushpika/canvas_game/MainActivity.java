@@ -20,13 +20,16 @@ public class MainActivity extends AppCompatActivity {
 
     public void go_page(View view){
         //Intent transition_page = new Intent(this,Question_view.class);
-        Intent transition_page = new Intent(this,AnimationActivity.class);
+        Intent transition_page = new Intent(this,database_data_entry_initial.class);
+        //Intent transition_page = new Intent(this,AnimationActivity.class);
         startActivity(transition_page);
+        finish();
     }
     public void go_question(View view){
         Intent transition_page = new Intent(this,Question_view.class);
         //Intent transition_page = new Intent(this,database_data_entry_initial.class);
         startActivity(transition_page);
+        finish();
     }
 
 

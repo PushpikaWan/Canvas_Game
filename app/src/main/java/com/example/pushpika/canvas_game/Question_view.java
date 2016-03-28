@@ -2,6 +2,7 @@ package com.example.pushpika.canvas_game;
 
 import android.app.AlertDialog;
 import android.app.Dialog;
+import android.content.Intent;
 import android.database.Cursor;
 import android.graphics.Color;
 import android.support.v7.app.AppCompatActivity;
@@ -24,7 +25,7 @@ public class Question_view extends AppCompatActivity {
     DatabaseHelper mydb;
     LinearLayout compulsary_words_field,optional_words_field;
     TextView textView;
-    String cur_text="",quest_topic="",quest_desc="",cur_seq="",answer_get="";
+    String cur_text="",quest_topic="",quest_desc="",cur_seq="",answer_get="",start_node="",promotion_node="",punishment_node="",promotion_class="",punishment_class="";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,10 +45,20 @@ public class Question_view extends AppCompatActivity {
         LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(
                 LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT);
 
-        final Question_object question_object = mydb.get_data_object("B"); // we can change class according to question
+        final Question_object question_object = mydb.get_data_object(AnimationActivity.target_class); // we can change class according to question
+
         quest_topic=question_object.question_topic;
         quest_desc = question_object.question_desc;
         answer_get = question_object.answer_sequence;
+        start_node = question_object.start_node;
+        promotion_node = question_object.promotion_node;
+        punishment_node = question_object.punishment_node;
+        promotion_class =question_object.promotion_class;
+        punishment_class = question_object.punishment_class;
+
+
+        Log.i("TAG", "promotion class "+ promotion_class);
+        Log.i("TAG", "punishment class "+ punishment_class);
         LinearLayout ll = null;
         //Create
         for(int j=0;j<question_object.keywords.length;j++)
@@ -58,6 +69,7 @@ public class Question_view extends AppCompatActivity {
 
             // Create Button
             final Button btn = new Button(this);
+            Log.i("TAG", "The index is"+ question_object.keywords[j]);
 
             final int finalJ = j;
             btn.setOnClickListener(new OnClickListener() {
@@ -93,6 +105,7 @@ public class Question_view extends AppCompatActivity {
 
             // Create Button
             final Button btn = new Button(this);
+            Log.i("TAG", "The index is"+ question_object.variable[i]);
             final int finalI = i;
             btn.setOnClickListener(new OnClickListener() {
                 public void onClick(View v) {
@@ -167,11 +180,31 @@ public class Question_view extends AppCompatActivity {
     }
 
     public void increment_board(){
+        //Intent transition_page = new Intent(this,Question_view.class);
+        Intent transition_page = new Intent(this,AnimationActivity.class);
+        AnimationActivity.current_pos=Integer.parseInt(start_node);
+        AnimationActivity.is_increment = 1;
+        AnimationActivity.target_pos = Integer.parseInt(promotion_node);
+        AnimationActivity.target_class = promotion_class;
+        Log.i("TAG", "current pos-- "+ AnimationActivity.current_pos);
+        Log.i("TAG", "target pos"+ AnimationActivity.target_pos);
+        Log.i("TAG", "Target class "+ AnimationActivity.target_class);
+        startActivity(transition_page);
+        finish();
 
     }
 
     public void decrement_board(){
-
+        Intent transition_page = new Intent(this,AnimationActivity.class);
+        AnimationActivity.current_pos=Integer.parseInt(start_node);
+        AnimationActivity.is_increment = 0;
+        AnimationActivity.target_pos = Integer.parseInt(punishment_node);
+        AnimationActivity.target_class = punishment_class;
+        Log.i("TAG", "current pos-- "+ AnimationActivity.current_pos);
+        Log.i("TAG", "target pos"+ AnimationActivity.target_pos);
+        Log.i("TAG", "Target class "+ AnimationActivity.target_class);
+        startActivity(transition_page);
+        finish();
     }
 
 }

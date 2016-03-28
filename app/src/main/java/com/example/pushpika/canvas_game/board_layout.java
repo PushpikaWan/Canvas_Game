@@ -25,7 +25,8 @@ public class board_layout extends View {
     int current_position,target_position;
     public board_layout(Context context) {
         super(context);
-        setBackgroundResource(R.drawable.boardnew);
+
+        //setBackgroundResource(R.drawable.boardnew);
         x_dir = 50;
         y_dir = 50;
     }

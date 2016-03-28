@@ -16,7 +16,7 @@ import java.util.FormatFlagsConversionMismatchException;
  */
 public class DatabaseHelper extends SQLiteOpenHelper {
 
-    public static final String DATABASE_NAME = "game_db";
+    public static final String DATABASE_NAME = "nn_db_db";
     public static final String TABLE_NAME_TAG = "Name_tag";
     public static final String TABLE_QUESTION= "Question";
     public static final String TABLE_LOG = "log";
@@ -38,6 +38,8 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     public static final String COLUMN_START_NODE = "Start_Node";
     public static final String COLUMN_PROMOTION_NODE = "Promotion_Node";
     public static final String COLUMN_PUNISHMENT_NODE = "Punishment_Node";
+    public static final String COLUMN_PROMOTION_CLASS = "Promotion_Class";
+    public static final String COLUMN_PUNISHMENT_CLASS = "Punishment_Class";
 
     //Log table
     public static final String COLUMN_LOG_ID = "Log_ID";
@@ -60,8 +62,8 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     @Override
     public void onCreate(SQLiteDatabase db) {
         db.execSQL("CREATE TABLE IF NOT EXISTS " + TABLE_NAME_TAG + " ( Tag_ID INTEGER PRIMARY KEY AUTOINCREMENT, Tag_Name VARCHAR(20) , Tag_Type VARCHAR(20) , Tag_DESC VARCHAR(100) ); ");
-        db.execSQL("CREATE TABLE IF NOT EXISTS " + TABLE_QUESTION + " ( Question_ID  INTEGER PRIMARY KEY AUTOINCREMENT,Question_topic VARCHAR(30),Question_desc VARCHAR(1000) , Question_class VARCHAR(5) , Answer_Sequence VARCHAR(100) ); ");
-        db.execSQL("CREATE TABLE IF NOT EXISTS " + TABLE_LOG + " ( Log_ID INTEGER PRIMARY KEY AUTOINCREMENT, Question_ID INTEGER , Status VARCHAR(20) , Position VARCHAR(10), Start_node INTEGER , Promotion_node INTEGER,Punishment_node INTEGER ); ");
+        db.execSQL("CREATE TABLE IF NOT EXISTS " + TABLE_QUESTION + " ( Question_ID  INTEGER PRIMARY KEY AUTOINCREMENT,Question_topic VARCHAR(30),Question_desc VARCHAR(1000) , Question_class VARCHAR(5) , Answer_Sequence VARCHAR(1000),Start_node INTEGER , Promotion_node INTEGER,Punishment_node INTEGER ,Promotion_class VARCHAR(5), punishment_class VARCHAR(5)); ");
+        db.execSQL("CREATE TABLE IF NOT EXISTS " + TABLE_LOG + " ( Log_ID INTEGER PRIMARY KEY AUTOINCREMENT, Question_ID INTEGER , Status VARCHAR(20) , Position VARCHAR(10) ); ");
         db.execSQL("CREATE TABLE IF NOT EXISTS " + TABLE_TAG_QUE_ASSIST + " (Question_ID INTEGER , Tag_ID INTEGER, PRIMARY KEY(Question_ID,Tag_ID)); ");
     }
 
@@ -90,7 +92,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
     }
 
-    public boolean insert_Question(String question_topic,String question_desc,String question_class,String answer_sequence,String start_node,String promotion_node, String punishment_node){
+    public boolean insert_Question(String question_topic,String question_desc,String question_class,String answer_sequence,String start_node,String promotion_node, String punishment_node, String promotion_class, String punishment_class){
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
         contentValues.put(COLUMN_QUESTION_TOPIC,question_topic);
@@ -100,6 +102,8 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         contentValues.put(COLUMN_START_NODE,start_node);
         contentValues.put(COLUMN_PROMOTION_NODE,promotion_node);
         contentValues.put(COLUMN_PUNISHMENT_NODE,punishment_node);
+        contentValues.put(COLUMN_PROMOTION_CLASS,promotion_class);
+        contentValues.put(COLUMN_PUNISHMENT_CLASS,punishment_class);
         long result =  db.insert(TABLE_QUESTION,null,contentValues);
         if (result ==-1){
             return false;
@@ -150,17 +154,23 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         String answer_sequence=null;
         String question_topic = null;
         String question_desc = null;
-
+        String start_node = null,promotion_node=null,punishment_node=null;
+        String promotion_class = null,punishment_class = null;
         if (res1.getCount()==0){
             //Toast.makeText(DatabaseHelper.this, "Nothing to show", Toast.LENGTH_LONG).show();
             //return null;
         }
-        StringBuffer buffer = new StringBuffer();
         while (res1.moveToNext()){
             question_id=Integer.parseInt(res1.getString(0));
             question_topic = res1.getString(1);
             question_desc = res1.getString(2);// 3 is a class name
             answer_sequence=res1.getString(4);
+            start_node=res1.getString(5);
+            promotion_node=res1.getString(6);
+            punishment_node=res1.getString(7);
+            promotion_class=res1.getString(8);
+            punishment_class=res1.getString(9);
+
         }
 
         //then use selected question id for queries..
@@ -204,7 +214,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         //String [] arr2 = {"if","else","is_prime","Yeah","done","x","Y","Z"};
         //Question_object question_object = new Question_object(arr1,arr2,"1,2,42,3,2,2",1);
         //return question_object;
-        return new Question_object(Keyword_id_array,Keyword_array,variable_id_array,Variable_array,question_topic,question_desc,answer_sequence,question_id);
+        return new Question_object(Keyword_id_array,Keyword_array,variable_id_array,Variable_array,question_topic,question_desc,answer_sequence,question_id,start_node,promotion_node,punishment_node,promotion_class,punishment_class);
 
     }
 
