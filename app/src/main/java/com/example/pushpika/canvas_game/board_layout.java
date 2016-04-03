@@ -142,6 +142,11 @@ public class board_layout extends View {
         move=move+1;
         AnimationActivity.is_increment=-1; //loop closed
         if(!transition_sequence[move].equals("N")){
+            try {
+                Thread.sleep(500);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
             invalidate();
         }
     }

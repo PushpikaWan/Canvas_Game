@@ -44,6 +44,7 @@ public class database_data_entry_initial extends AppCompatActivity {
     public void go_first_page(View view){
         Intent intent = new Intent(this,MainActivity.class);
         startActivity(intent);
+        finish();
     }
 
     public void insertData_tag_ques_assist() {
