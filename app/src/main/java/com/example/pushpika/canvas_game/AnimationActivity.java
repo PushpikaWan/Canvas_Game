@@ -39,7 +39,7 @@ public class AnimationActivity extends AppCompatActivity {
                 bd_layout.setBackgroundColor(Color.WHITE);
                 finish();
             }
-        }, 7000);
+        }, 4000);
 
     }
 }

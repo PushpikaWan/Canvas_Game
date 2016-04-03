@@ -8,7 +8,8 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.example.pushpika.canvas_game.Question_view"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:background="#F3FAB6">
 
 
     <LinearLayout
@@ -52,7 +53,7 @@
         android:layout_height="wrap_content"
         android:id="@+id/compulsary_words"
         android:orientation="vertical"
-        android:background="#b00"
+        android:background="#E44424"
         android:layout_marginBottom="5dp">
     </LinearLayout>
 
@@ -68,7 +69,7 @@
         android:layout_height="wrap_content"
         android:id="@+id/optional_words"
         android:orientation="vertical"
-        android:background="#0b0"
+        android:background="#A8CD1B"
         android:layout_marginBottom="5dp">
     </LinearLayout>
     </ScrollView>
@@ -99,14 +100,14 @@
             <Button
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Reset"
+                android:text="Undo"
                 android:id="@+id/button3"
                 android:layout_gravity="center_horizontal"
                 android:background="#cc2121"
                 android:textColor="#ffffff"
                 android:layout_marginRight="10dp"
                 android:layout_weight="1"
-                android:onClick="reset_text"
+                android:onClick="remove_tag"
                 />
 
             <Button

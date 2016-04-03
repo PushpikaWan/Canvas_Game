@@ -8,6 +8,8 @@ import android.graphics.Color;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Window;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.LinearLayout;
 import android.os.Bundle;
 import android.app.Activity;
@@ -26,7 +28,10 @@ public class Question_view extends AppCompatActivity {
     LinearLayout compulsary_words_field,optional_words_field;
     TextView textView;
     String cur_text="",quest_topic="",quest_desc="",cur_seq="",answer_get="",start_node="",promotion_node="",punishment_node="",promotion_class="",punishment_class="";
-
+    String text="",id="";
+    String text_arr [] = new String [100];
+    String id_arr [] = new String[100];
+    int cur_len=0;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -36,10 +41,12 @@ public class Question_view extends AppCompatActivity {
         optional_words_field = (LinearLayout) findViewById(R.id.optional_words);
         textView = (TextView) findViewById(R.id.text1);
         dynamic_content();
+        show_message(quest_topic,quest_desc);
         }
 
     public void dynamic_content(){
         mydb = new DatabaseHelper(this);
+        final Animation animation_fade_out = AnimationUtils.loadAnimation(this, R.anim.fade_out_anim);
         // create the layout params that will be used to define how your
         // button will be displayed
         LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(
@@ -74,17 +81,22 @@ public class Question_view extends AppCompatActivity {
             final int finalJ = j;
             btn.setOnClickListener(new OnClickListener() {
                 public void onClick(View v) {
-                    Log.i("TAG", "The index is" +question_object.keywords[finalJ] ); //set text for button action
-                    cur_text = textView.getText().toString();
-                    cur_text = cur_text+" "+question_object.keywords[finalJ];
-                    cur_seq = cur_seq +","+question_object.keywords_id[finalJ];
-                    textView.setText(cur_text);
+                    Log.i("TAG", "The index is" + question_object.keywords[finalJ]); //set text for button action
+                    //cur_text = textView.getText().toString();
+                    //cur_text = cur_text + " " + question_object.keywords[finalJ];
+                    //cur_seq = cur_seq + "," + question_object.keywords_id[finalJ];
+                    //textView.setText(cur_text);
+                    text = question_object.keywords[finalJ];
+                    id= question_object.keywords_id[finalJ];
+                    add_tag(text, id);
+                    v.startAnimation(animation_fade_out);
                 }
             });
 
             // Give button an ID
             btn.setId(j + 1);
             btn.setText(question_object.keywords[j]);
+            //btn.setBackgroundColor(Color.parseColor("#CBE32D"));
             // set the layoutParams on the button
             btn.setLayoutParams(params);
             //Add button to LinearLayout
@@ -109,17 +121,21 @@ public class Question_view extends AppCompatActivity {
             final int finalI = i;
             btn.setOnClickListener(new OnClickListener() {
                 public void onClick(View v) {
-                    Log.i("TAG", "The index is" +question_object.variable[finalI] ); //set text for button action
+                    Log.i("TAG", "The index is" + question_object.variable[finalI]); //set text for button action
 
-                    cur_text = textView.getText().toString();
-                    cur_text = cur_text+" "+question_object.variable[finalI];
-                    cur_seq = cur_seq +","+question_object.variable_id[finalI];
-                    textView.setText(cur_text);
+                    //cur_text = textView.getText().toString();
+                    //cur_text = cur_text + " " + question_object.variable[finalI];
+                    //cur_seq = cur_seq + "," + question_object.variable_id[finalI];
+                    text = question_object.variable[finalI];
+                    id= question_object.variable_id[finalI];
+                    add_tag(text, id);
+                    //textView.setText(cur_text);
+                    v.startAnimation(animation_fade_out);
                 }
             });
 
             // Give button an ID
-            btn.setId(i+1);
+            btn.setId(i + 1);
             btn.setText(question_object.variable[i]);
             // set the layoutParams on the button
             btn.setLayoutParams(params);
@@ -131,6 +147,35 @@ public class Question_view extends AppCompatActivity {
         }
 
     }
+    public void add_tag(String tag, String tag_id){
+        String temp_str="";
+        int i;
+        text_arr[cur_len]=tag;
+        id_arr[cur_len]=tag_id;
+        cur_len+=1;
+        for (i=0;i<cur_len;i++){
+            temp_str= temp_str+ " " +text_arr[i];
+        }
+        textView.setText(temp_str);
+
+    }
+
+    public void remove_tag(View view){
+        String temp_str="";
+        int i;
+        if(cur_len!=0) {
+            text_arr[cur_len] = null;
+            id_arr[cur_len] = null;
+            cur_len = cur_len - 1;
+        }
+        for (i=0;i<cur_len;i++){
+            temp_str= temp_str+ " " +text_arr[i];
+        }
+        textView.setText(temp_str);
+
+    }
+
+
 
     public void view_question(View view){
         show_message(quest_topic,quest_desc);
@@ -146,14 +191,15 @@ public class Question_view extends AppCompatActivity {
         dialog_box.show();
     }
 
-    public void reset_text(View view){
-        cur_text = "";
-        cur_seq = "";
-        textView.setText(cur_text);
-    }
+
 
     public void check_answer(View view){
         answer_get = answer_get.replaceAll(",", "");
+        cur_seq="";
+        int i;
+        for(i=0;i<cur_len;i++){
+            cur_seq =cur_seq+ ","+id_arr[i];
+        }
         cur_seq = cur_seq.replaceAll(",", "");
         Log.i("TAG", "The answer sequence is" +answer_get); //set text for button action
         Log.i("TAG", "The current sequence is" + cur_seq ); //set text for button action
@@ -166,6 +212,7 @@ public class Question_view extends AppCompatActivity {
             settingsDialog.show();
             textView.setBackgroundColor(Color.GREEN);
             increment_board();
+
         }
         else{
             //return false
