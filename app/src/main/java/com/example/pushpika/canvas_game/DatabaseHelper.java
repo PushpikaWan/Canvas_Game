@@ -16,7 +16,7 @@ import java.util.FormatFlagsConversionMismatchException;
  */
 public class DatabaseHelper extends SQLiteOpenHelper {
 
-    public static final String DATABASE_NAME = "nn_db_db";
+    public static final String DATABASE_NAME = "gh_db_db";
     public static final String TABLE_NAME_TAG = "Name_tag";
     public static final String TABLE_QUESTION= "Question";
     public static final String TABLE_LOG = "log";

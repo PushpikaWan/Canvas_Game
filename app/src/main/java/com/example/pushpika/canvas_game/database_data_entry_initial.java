@@ -1,6 +1,7 @@
 package com.example.pushpika.canvas_game;
 
 import android.app.AlertDialog;
+import android.content.Intent;
 import android.database.Cursor;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
@@ -8,6 +9,7 @@ import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
+import android.widget.Button;
 import android.widget.Toast;
 
 import java.nio.channels.NonReadableChannelException;
@@ -15,14 +17,15 @@ import java.nio.channels.NonReadableChannelException;
 public class database_data_entry_initial extends AppCompatActivity {
 
     DatabaseHelper mydb;
-
+    Button btn;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_database_data_entry_initial);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-
+        btn = (Button) findViewById(R.id.go_firstpage);
+        btn.setVisibility(View.GONE);
         mydb = new DatabaseHelper(this);
         insertData_tags();
         insertData_Question();
@@ -38,6 +41,11 @@ public class database_data_entry_initial extends AppCompatActivity {
         });
     }
 
+    public void go_first_page(View view){
+        Intent intent = new Intent(this,MainActivity.class);
+        startActivity(intent);
+        finish();
+    }
 
     public void insertData_tag_ques_assist() {
         mydb.insert_tag_que_assist(1,1);
@@ -139,7 +147,8 @@ public class database_data_entry_initial extends AppCompatActivity {
         mydb.insert_tag_que_assist(8,87);
         mydb.insert_tag_que_assist(8,88);
 
-
+        //after all data stored
+        btn.setVisibility(View.VISIBLE);
     }
 
 

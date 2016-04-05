@@ -22,24 +22,24 @@ public class AnimationActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         //getActionBar().hide();
         //activity_animation_layout = new Activity_animation_layout(this);
-
-        bd_layout = new board_layout(this);
-        bd_layout.setBackgroundResource(R.drawable.boardnew);
         getSupportActionBar().hide();
+        bd_layout = new board_layout(this);
+        bd_layout.setBackgroundResource(R.drawable.board);
         //setContentView(activity_animation_layout);
         setContentView(bd_layout);
         Log.i("TAG", "current pos-- "+ AnimationActivity.current_pos);
         Log.i("TAG", "target pos" + AnimationActivity.target_pos);
         Log.i("TAG", "Target class " + AnimationActivity.target_class);
         Handler handler = new Handler();
-        final Intent intent = new Intent(this, MainActivity.class);
+        //final Intent intent = new Intent(this, MainActivity.class);
+        final Intent intent = new Intent(this, Question_view.class);
         handler.postDelayed(new Runnable() {
             public void run() {
                 startActivity(intent);
-                bd_layout.setBackgroundColor(Color.WHITE);
+                //bd_layout.setBackgroundColor(Color.WHITE);
                 finish();
             }
-        }, 7000);
+        }, 4000);
 
     }
 }
