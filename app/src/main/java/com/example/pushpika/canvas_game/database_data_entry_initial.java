@@ -144,7 +144,8 @@ public class database_data_entry_initial extends AppCompatActivity {
 
 
     public void insertData_Question() {
-        mydb.insert_Question("Swap ","SWAP two values , x=10 and y=20 using temp variable", "A","5,2,1,3,4","1","3","1","B","A");
+        //mydb.insert_Question(question_name,question_in_detail, question_class,answer_sequence,compulsory_param1,compulsory_param2,compulsory_param3,...);
+        mydb.insert_Question("Swap ","Swapping two values , x=myScore and y=3 using temp variable", "A","5,2,1,3,4","1","3","1","B","A");
         mydb.insert_Question("If-Else and isPrime() ","Check whether the given number is prime or not", "B","10,9,8,6,7","3","5","1","C","A");
         mydb.insert_Question("If-Elseif-else ","Use if-elseif and else conditions to put numbers into the correct categories.", "C","10,16,15,11,14,12,6,13","5","12","3","D","B");
         mydb.insert_Question("Switch ","Print month name when month number entered,if that month number is less than 4,print month name as an output", "D","20,18,23,19,17,22,25,17,24,26,17,21,17","12","16","12","E","D");
@@ -152,6 +153,8 @@ public class database_data_entry_initial extends AppCompatActivity {
         mydb.insert_Question("for-each ","Create integer array list and add 1,2 to the list,then remove all numbers in list", "F","36,37,44,38,40,39,51,36,37,44,38,41,42,40,48,41,49,42,40,48,41,50,42,47,41,44,45,46,40,42,40,43,41,45,42","20","25","16","G","E");
         mydb.insert_Question("do-while ","Print numbers 10 to 0 using do while loop(use semi colan at end of the lines )", "G","65,53,52,64,67,66,56,63,55,53,54,67,53,52,53,57,60,67,62,59,55,53,61,58,54,67","25","30","16","H","E");
         mydb.insert_Question("while-do ","Print Fibonacci Series using while loop until and equal to n numbers", "H","71,70,80,88,81,69,83,68,82,79,74,81,73,84,75,72,81,78,87,77,83,76,82,72,84,83,78,81,77,75,77,81,72,83,79,86,79,85","30","36","25","H","G");
+
+
         //change promotion class in while -do
     }
 
@@ -165,7 +168,7 @@ public class database_data_entry_initial extends AppCompatActivity {
         mydb.insert_Tag("temp=x;\n","MAIN","None"); //id=2
         mydb.insert_Tag("y=temp;\n","MAIN","None"); //id=3
         mydb.insert_Tag("print(x,y)\n","VARIABLE","None"); //id=4
-        mydb.insert_Tag("x=10;y=20;\n","VARIABLE","None"); //id=5
+        mydb.insert_Tag("x=myScore;y=20;\n","VARIABLE","None"); //id=5
 
         //question 02 class - B
         mydb.insert_Tag("else\n","MAIN","None"); //id=6
