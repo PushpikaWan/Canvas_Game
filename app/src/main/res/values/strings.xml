@@ -2,4 +2,6 @@
     <string name="app_name">Canvas_Game</string>
     <string name="title_activity_problem_view">Problem_view</string>
     <string name="title_activity_database_data_entry_initial">database_data_entry_initial</string>
+    <string name="undo">Undo action</string>
+    <string name="checkanswer">Check Answer</string>
 </resources>

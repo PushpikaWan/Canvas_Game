@@ -9,7 +9,7 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.example.pushpika.canvas_game.Question_view"
     android:orientation="vertical"
-    android:background="#F3FAB6">
+    android:background="#ffffff">
 
 
     <LinearLayout
@@ -20,25 +20,28 @@
         android:layout_marginBottom="10dp">
 
         <TextView
-            android:layout_width="match_parent"
+            android:layout_width="189dp"
             android:layout_height="match_parent"
-            android:text="Position"
             android:textSize="20dp"
             android:textAlignment="center"
-            android:background="#864"
-            android:layout_weight="1"
-            />
+            android:background="@color/colorBackground"
+            android:paddingTop="5dp"
+            android:textStyle="normal"
+            android:hint="Position"/>
 
         <Button
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Question"
+            android:text="View Question"
             android:id="@+id/button_question"
-            android:background="#ff0"
+            android:background="@drawable/custombtn2"
+            android:paddingLeft="8dp"
+            android:paddingRight="8dp"
             android:layout_marginLeft="5dp"
-            android:textColor="#ffffff"
+            android:textColor="@color/colorPrimary"
             android:layout_weight="3"
-            android:onClick="view_question"/>
+            android:onClick="view_question"
+            android:drawableLeft="@drawable/questionblue"/>
 
 
     </LinearLayout>
@@ -53,8 +56,9 @@
         android:layout_height="wrap_content"
         android:id="@+id/compulsary_words"
         android:orientation="vertical"
-        android:background="#E44424"
-        android:layout_marginBottom="5dp">
+        android:background="@color/colorBackground"
+        android:layout_marginBottom="5dp"
+        android:foreground="@color/colorText">
     </LinearLayout>
 
     </ScrollView>
@@ -69,8 +73,9 @@
         android:layout_height="wrap_content"
         android:id="@+id/optional_words"
         android:orientation="vertical"
-        android:background="#A8CD1B"
-        android:layout_marginBottom="5dp">
+        android:background="@color/colorBackground"
+        android:layout_marginBottom="5dp"
+        android:foreground="@color/colorText">
     </LinearLayout>
     </ScrollView>
 
@@ -85,7 +90,7 @@
 
         <EditText
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="132dp"
             android:id="@+id/text1"
             android:editable="false" />
 
@@ -100,26 +105,36 @@
             <Button
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Undo"
+                android:text="@string/undo"
                 android:id="@+id/button3"
                 android:layout_gravity="center_horizontal"
-                android:background="#cc2121"
-                android:textColor="#ffffff"
+                android:background="@drawable/custombtn"
+                android:paddingRight="8dp"
+                android:paddingLeft="4dp"
+                android:textColor="@color/colorDanger"
                 android:layout_marginRight="10dp"
                 android:layout_weight="1"
                 android:onClick="remove_tag"
+                android:textSize="16dp"
+                android:drawableRight="@drawable/Undored"
+
                 />
 
             <Button
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Check"
+                android:text="@string/checkanswer"
                 android:id="@+id/button2"
-                android:background="#46dadc"
+                android:background="@drawable/custombtn2"
                 android:layout_marginLeft="10dp"
-                android:textColor="#ffffff"
+                android:textColor="@color/colorPrimary"
                 android:layout_weight="1"
-                android:onClick="check_answer"/>
+                android:paddingRight="8dp"
+                android:paddingLeft="8dp"
+                android:onClick="check_answer"
+                android:textSize="16dp"
+                android:drawableRight="@drawable/Checkedblue"
+                android:drawablePadding="0dp"/>
 
 
         </LinearLayout>
