@@ -153,18 +153,27 @@ public class database_data_entry_initial extends AppCompatActivity {
 
 
     public void insertData_Question() {
-        //mydb.insert_Question(question_name,question_in_detail, question_class,answer_sequence,compulsory_param1,compulsory_param2,compulsory_param3,...);
+        //mydb.insert_Question(question_name,question_in_detail, question_class,answer_sequence,start_node,promotion_node, punishment_node, promotion_class, punishment_class);
         mydb.insert_Question("Swap ","Swapping two values , x=myScore and y=3 using temp variable", "A","5,2,1,3,4","1","3","1","B","A");
-        mydb.insert_Question("If-Else and isPrime() ","Check whether the given number is prime or not", "B","10,9,8,6,7","3","5","1","C","A");
+        mydb.insert_Question("If-Else and isPrime() ","Check whether your score is prime or not. If prime take promotion to level 5, otherwise you can stay in stage 3", "B","10,9,8,6,7","3","5","1","C","A");
         mydb.insert_Question("If-Elseif-else ","Use if-elseif and else conditions to put numbers into the correct categories.", "C","10,16,15,11,14,12,6,13","5","12","3","D","B");
         mydb.insert_Question("Switch ","Print month name when month number entered,if that month number is less than 4,print month name as an output", "D","20,18,23,19,17,22,25,17,24,26,17,21,17","12","16","12","E","D");
         mydb.insert_Question("for loop ","Print numbers one to ten using for loop", "E","29,33,27,31,30,35,30,31,32,28,34","16","20","12","F","D");
         mydb.insert_Question("for-each ","Create integer array list and add 1,2 to the list,then remove all numbers in list", "F","36,37,44,38,40,39,51,36,37,44,38,41,42,40,48,41,49,42,40,48,41,50,42,47,41,44,45,46,40,42,40,43,41,45,42","20","25","16","G","E");
         mydb.insert_Question("do-while ","Print numbers 10 to 0 using do while loop(use semi colan at end of the lines )", "G","65,53,52,64,67,66,56,63,55,53,54,67,53,52,53,57,60,67,62,59,55,53,61,58,54,67","25","30","16","H","E");
-        mydb.insert_Question("while-do ","Print Fibonacci Series using while loop until and equal to n numbers", "H","71,70,80,88,81,69,83,68,82,79,74,81,73,84,75,72,81,78,87,77,83,76,82,72,84,83,78,81,77,75,77,81,72,83,79,86,79,85","30","36","25","H","G");
+        mydb.insert_Question("while-do ","Print Fibonacci Series using while loop until and equal to your score.", "H","71,70,80,88,81,69,83,68,82,79,74,81,73,84,75,72,81,78,87,77,83,76,82,72,84,83,78,81,77,75,77,81,72,83,79,86,79,85","30","36","25","H","G");
+        mydb.insert_Question("if condition and for loop","Print all square numbers in your path","I","100,98,92,89,96,102,90,97,89,93","36","40","30","J","H");
+        mydb.insert_Question("two for loops","Print prime numbers upto your score","J",); //not completed
+
+        mydb.insert_Question("pattern-1","Print below pattern.11111\n" +
+                "1\t1\n" +
+                "1\t1\n" +
+                "1\t1\n" +
+                "11111 ","K",); //not completed
+        mydb.insert_Question("Palindrome number","Implement an algorithm for check given number is palindrome or not.","K",);//not completed
+        mydb.insert_Question("Brain Problem","Go 5 steps up and 4 steps right, What is your position now.Implement this work using for loops and goto function",); //not completed
 
 
-        //change promotion class in while -do
     }
 
         //
@@ -172,6 +181,10 @@ public class database_data_entry_initial extends AppCompatActivity {
 
         //keyword is used for mainly use variables
 
+
+
+        //start_node,promotion_node, punishment_node, promotion_class, punishment_class
+        //mydb.insert_Question("A","5,2,1,3,4","1","3","1","B","A");
         //question 01 class - A
         mydb.insert_Tag("x=y;\n","MAIN","None"); //id=1
         mydb.insert_Tag("temp=x;\n","MAIN","None"); //id=2
@@ -179,6 +192,8 @@ public class database_data_entry_initial extends AppCompatActivity {
         mydb.insert_Tag("print(x,y)\n","VARIABLE","None"); //id=4
         mydb.insert_Tag("x=myScore;y=20;\n","VARIABLE","None"); //id=5
 
+
+        //mydb.insert_Question("B","10,9,8,6,7","3","5","1","C","A");
         //question 02 class - B
         mydb.insert_Tag("else\n","MAIN","None"); //id=6
         mydb.insert_Tag(" return false\n","VARIABLE","None"); //id=7
@@ -288,6 +303,23 @@ public class database_data_entry_initial extends AppCompatActivity {
         mydb.insert_Tag("++","MAIN","None");//id=86
         mydb.insert_Tag("+","VARIABLE","None");//id=87
         mydb.insert_Tag("i","VARIABLE","None");//id=88
+
+
+        //question 09 - class - I        | answer => "100,98,92,89,96,102,90,97,89,93"
+        mydb.insert_Tag("myScore","MAIN","None"); //id=89
+        mydb.insert_Tag("square(i)","MAIN","None"); //id=90
+        mydb.insert_Tag(">=","VARIABLE","None"); //id=91
+        mydb.insert_Tag("i","VARIABLE","None"); //id=92
+        mydb.insert_Tag("print(i)","VARIABLE","None"); //id=93
+        mydb.insert_Tag("i++","VARIABLE","None"); //id=94
+        mydb.insert_Tag("square(myScore)","VARIABLE","None"); //id=95
+        mydb.insert_Tag("i++","VARIABLE","None"); //id=96
+        mydb.insert_Tag("<=","VARIABLE","None"); //id=97
+        mydb.insert_Tag("i=1","VARIABLE","None"); //id=98
+        mydb.insert_Tag("=","VARIABLE","None"); //id=99
+        mydb.insert_Tag("for","MAIN","None"); //id=100
+        mydb.insert_Tag("i--","VARIABLE","None"); //id=101
+        mydb.insert_Tag("if","MAIN","None"); //id=102
 
 
 
