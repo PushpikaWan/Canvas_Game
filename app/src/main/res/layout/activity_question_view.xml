@@ -116,7 +116,7 @@
                 android:layout_weight="1"
                 android:onClick="remove_tag"
                 android:textSize="16dp"
-                android:drawableRight="@drawable/Undored"
+                android:drawableRight="@drawable/undored"
 
                 />
 
@@ -133,7 +133,7 @@
                 android:paddingLeft="8dp"
                 android:onClick="check_answer"
                 android:textSize="16dp"
-                android:drawableRight="@drawable/Checkedblue"
+                android:drawableRight="@drawable/checkedblue"
                 android:drawablePadding="0dp"/>
 
 

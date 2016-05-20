@@ -12,4 +12,19 @@
     tools:context="com.example.pushpika.canvas_game.database_data_entry_initial"
     tools:showIn="@layout/activity_database_data_entry_initial">
 
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Database installing .... "
+        android:id="@+id/textView" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/go_firstpage"
+        android:text="START GAME"
+        android:onClick="go_first_page"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true" />
+
 </RelativeLayout>

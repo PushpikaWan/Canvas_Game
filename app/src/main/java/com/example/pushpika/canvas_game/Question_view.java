@@ -42,7 +42,7 @@ public class Question_view extends AppCompatActivity {
         textView = (TextView) findViewById(R.id.text1);
         dynamic_content();
         show_message(quest_topic,quest_desc);
-        }
+    }
 
     public void dynamic_content(){
         mydb = new DatabaseHelper(this);
@@ -70,9 +70,9 @@ public class Question_view extends AppCompatActivity {
         //Create
         for(int j=0;j<question_object.keywords.length;j++)
         {
-                    // Create LinearLayout
-                    ll = new LinearLayout(this);
-                    ll.setOrientation(LinearLayout.HORIZONTAL);
+            // Create LinearLayout
+            ll = new LinearLayout(this);
+            ll.setOrientation(LinearLayout.HORIZONTAL);
 
             // Create Button
             final Button btn = new Button(this);
@@ -94,7 +94,7 @@ public class Question_view extends AppCompatActivity {
             });
 
             // Give button an ID
-            btn.setId(j + 1);
+            btn.setId(j);
             btn.setText(question_object.keywords[j]);
             //btn.setBackgroundColor(Color.parseColor("#CBE32D"));
             // set the layoutParams on the button
@@ -111,9 +111,9 @@ public class Question_view extends AppCompatActivity {
         for(int i=0;i<question_object.variable.length;i++)
         {
 
-                // Create LinearLayout
-                ll1 = new LinearLayout(this);
-                ll1.setOrientation(LinearLayout.HORIZONTAL);
+            // Create LinearLayout
+            ll1 = new LinearLayout(this);
+            ll1.setOrientation(LinearLayout.HORIZONTAL);
 
             // Create Button
             final Button btn = new Button(this);
@@ -131,11 +131,12 @@ public class Question_view extends AppCompatActivity {
                     add_tag(text, id);
                     //textView.setText(cur_text);
                     v.startAnimation(animation_fade_out);
+
                 }
             });
 
             // Give button an ID
-            btn.setId(i + 1);
+            btn.setId(i);
             btn.setText(question_object.variable[i]);
             // set the layoutParams on the button
             btn.setLayoutParams(params);
