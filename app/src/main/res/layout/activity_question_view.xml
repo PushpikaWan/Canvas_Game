@@ -22,6 +22,7 @@
         <TextView
             android:layout_width="189dp"
             android:layout_height="match_parent"
+            android:id="@+id/position_number"
             android:textSize="20dp"
             android:textAlignment="center"
             android:background="@color/colorBackground"
@@ -73,7 +74,6 @@
         android:layout_height="wrap_content"
         android:id="@+id/optional_words"
         android:orientation="vertical"
-        android:background="@color/colorBackground"
         android:layout_marginBottom="5dp"
         android:foreground="@color/colorText">
     </LinearLayout>
@@ -116,7 +116,7 @@
                 android:layout_weight="1"
                 android:onClick="remove_tag"
                 android:textSize="16dp"
-                android:drawableRight="@drawable/Undored"
+                android:drawableRight="@drawable/undored"
 
                 />
 
@@ -133,7 +133,7 @@
                 android:paddingLeft="8dp"
                 android:onClick="check_answer"
                 android:textSize="16dp"
-                android:drawableRight="@drawable/Checkedblue"
+                android:drawableRight="@drawable/checkedblue"
                 android:drawablePadding="0dp"/>
 
 

@@ -72,6 +72,7 @@ public class board_layout extends View {
             int i = 0;
             while (AnimationActivity.current_pos + 1 <= AnimationActivity.target_pos) {
                 if ((AnimationActivity.current_pos) % 10 != 0) {
+                    Log.v("current pos is : ",String.valueOf(AnimationActivity.current_pos));
                     if ((int) Math.floor(AnimationActivity.current_pos / 10) % 2 == 0) { //move forward
                         move_forward += 1;
                         transition_sequence[i] = "F";
@@ -94,7 +95,7 @@ public class board_layout extends View {
             Log.v("happened decrement",String.valueOf(AnimationActivity.target_pos));
             //when decrement
             int j = 0;
-            while (AnimationActivity.current_pos - 1 >= AnimationActivity.target_pos) {
+            while (AnimationActivity.current_pos >= AnimationActivity.target_pos) {
                 if ((AnimationActivity.current_pos - 1) % 10 != 0) {
                     if ((int) Math.floor((AnimationActivity.current_pos-1)/ 10) % 2 != 0) { //move forward
                         move_forward += 1;
@@ -143,7 +144,7 @@ public class board_layout extends View {
         AnimationActivity.is_increment=-1; //loop closed
         if(!transition_sequence[move].equals("N")){
             try {
-                Thread.sleep(500);
+                Thread.sleep(200);
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
