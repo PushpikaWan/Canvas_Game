@@ -7,7 +7,7 @@
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme">
+        android:theme="@style/AppTheme.NoActionBar">
         <activity
             android:name=".SplashScreen"
             android:label="@string/app_name">
@@ -30,7 +30,10 @@
             android:name=".database_data_entry_initial"
             android:label="@string/title_activity_database_data_entry_initial"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".NewQuestionView"></activity>
+        <activity android:name=".NewQuestionView" />
+        <activity android:name=".AboutActivity" />
+        <activity android:name=".ExampleActivity" />
+        <activity android:name=".HelpActivity"></activity>
     </application>
 
 </manifest>

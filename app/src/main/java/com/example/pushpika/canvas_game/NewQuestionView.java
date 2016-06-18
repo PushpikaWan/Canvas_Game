@@ -93,6 +93,7 @@ public class NewQuestionView extends AppCompatActivity {
             // Give button an ID
             btn.setId(j);
             btn.setText(question_object.keywords[j]);
+            btn.setTextSize(Float.parseFloat("12"));
             //btn.setBackgroundColor(Color.parseColor("#CBE32D"));
             // set the layoutParams on the button
             btn.setLayoutParams(params);
@@ -135,6 +136,7 @@ public class NewQuestionView extends AppCompatActivity {
             // Give button an ID
             btn.setId(i);
             btn.setText(question_object.variable[i]);
+            btn.setTextSize(Float.parseFloat("12"));
             // set the layoutParams on the button
             btn.setLayoutParams(params);
             //Add button to LinearLayout
@@ -183,6 +185,12 @@ public class NewQuestionView extends AppCompatActivity {
 
     }
 
+    public void Go_Board(View view){
+        Intent transition_page1 = new Intent(this,AnimationActivity.class);
+        startActivity(transition_page1);
+
+    }
+
     public void show_message(String title, String message){
 
         AlertDialog.Builder dialog_box = new AlertDialog.Builder(this);
@@ -192,6 +200,10 @@ public class NewQuestionView extends AppCompatActivity {
         dialog_box.show();
     }
 
+    public void Go_Home(View view){
+        Intent intent = new Intent(this, MainActivity.class);
+        startActivity(intent);
+    }
 
 
     public void check_answer(View view){

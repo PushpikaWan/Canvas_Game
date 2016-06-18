@@ -49,5 +49,24 @@ public class MainActivity extends Activity {
         finish();
     }
 
+    public void Go_Help(View view){
+        Intent intent = new Intent(this, HelpActivity.class);
+        startActivity(intent);
+        finish();
+    }
+
+    public void Go_About(View view){
+        Intent intent = new Intent(this, AboutActivity.class);
+        startActivity(intent);
+        finish();
+    }
+
+    public void Go_Example(View view){
+        Intent intent = new Intent(this, ExampleActivity.class);
+        startActivity(intent);
+        finish();
+    }
+
+
 }
 
