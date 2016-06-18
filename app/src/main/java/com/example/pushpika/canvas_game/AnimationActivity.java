@@ -24,7 +24,7 @@ public class AnimationActivity extends AppCompatActivity {
         //activity_animation_layout = new Activity_animation_layout(this);
         getSupportActionBar().hide();
         bd_layout = new board_layout(this);
-        bd_layout.setBackgroundResource(R.drawable.board);
+        //bd_layout.setBackgroundResource(R.drawable.board);
         //setContentView(activity_animation_layout);
         setContentView(bd_layout);
         Log.i("TAG", "current pos-- "+ AnimationActivity.current_pos);
@@ -32,7 +32,7 @@ public class AnimationActivity extends AppCompatActivity {
         Log.i("TAG", "Target class " + AnimationActivity.target_class);
         Handler handler = new Handler();
         //final Intent intent = new Intent(this, MainActivity.class);
-        final Intent intent = new Intent(this, Question_view.class);
+        final Intent intent = new Intent(this, NewQuestionView.class);
         handler.postDelayed(new Runnable() {
             public void run() {
                 startActivity(intent);

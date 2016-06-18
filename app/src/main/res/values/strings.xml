@@ -4,4 +4,20 @@
     <string name="title_activity_database_data_entry_initial">database_data_entry_initial</string>
     <string name="undo">Undo action</string>
     <string name="checkanswer">Check Answer</string>
+    <string name="action_settings">Settings</string>
+    <string name="example">Example</string>
+    <string name="about">About</string>
+    <string name="help">Help</string>
+    <string name="think_solve_score">Think . Solve . Score .</string>
+    <string name="take_me_to_the_quest">Take me to the Quest</string>
+    <string name="programming_teacher">Programming Teacher</string>
+    <string name="_2016_programming_teacher_all_rights_reserved">©2016 Programming Teacher. All rights reserved.</string>
+    <string name="v1_0">v1.0</string>
+    <string name="this_application_helps_you_to_enhance_your_programming_and_algorithemic_knowledge_start_learning_today_and_see_where_programmingteacher_can_take_you">This application helps you to enhance your programming and algorithemic knowledge. Start learning today and see where ProgrammingTeacher can take you.</string>
+    <string name="credits_dr_rasika_dayarathne">Credits : Dr. Rasika Dayarathne</string>
+    <string name="pushpika_wanniachchi">Pushpika Wanniachchi</string>
+    <string name="lasith_niroshan">Lasith Niroshan</string>
+    <string name="manoj_tharanga">Manoj Tharanga</string>
+    <string name="dhanushka_chandana">Dhanushka Chandana</string>
+    <string name="lahiru_rangitha">Lahiru Rangitha</string>
 </resources>

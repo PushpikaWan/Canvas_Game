@@ -9,4 +9,6 @@
     <color name="colorText">#353535</color>
     <color name="colorDanger">#f55151</color>
     <color name="colorBtnText">#ffffff</color>
+    <color name="colorDark">#303030</color>
+    <color name="transparent">#00000000</color>
 </resources>

@@ -1,5 +1,6 @@
 package com.example.pushpika.canvas_game;
 
+import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.Context;
 import android.content.Intent;
@@ -13,7 +14,7 @@ import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.Toast;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends Activity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,15 +40,14 @@ public class MainActivity extends AppCompatActivity {
 
 
 
-    public void go_question(View view){
+    public void Go_Ques(View view){
         final Animation animation_translate_2 = AnimationUtils.loadAnimation(this,R.anim.translate_anim);
-        Intent transition_page = new Intent(this,Question_view.class);
+        Intent transition_page = new Intent(this,NewQuestionView.class);
         //Intent transition_page = new Intent(this,database_data_entry_initial.class);
         view.startAnimation(animation_translate_2);
         startActivity(transition_page);
         finish();
     }
 
-
-
 }
+
