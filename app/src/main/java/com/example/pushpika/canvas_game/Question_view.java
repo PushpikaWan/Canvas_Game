@@ -218,6 +218,9 @@ public class Question_view extends AppCompatActivity {
             increment_board();
 
         }
+        else if(cur_seq.equals("")){
+            //input field is empty
+        }
         else{
             //return false
             Dialog settingsDialog = new Dialog(this);
