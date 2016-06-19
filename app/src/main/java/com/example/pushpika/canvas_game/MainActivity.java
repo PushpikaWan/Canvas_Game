@@ -56,7 +56,10 @@ public class MainActivity extends Activity {
             editor.commit();
     }
 
-
+    @Override
+    public void onBackPressed() {
+        finish();
+    }
 
 
 

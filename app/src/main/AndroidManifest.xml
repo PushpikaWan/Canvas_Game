@@ -34,7 +34,8 @@
         <activity android:name=".NewQuestionView" />
         <activity android:name=".AboutActivity" />
         <activity android:name=".ExampleActivity" />
-        <activity android:name=".HelpActivity"></activity>
+        <activity android:name=".HelpActivity" />
+        <activity android:name=".WinActivity"></activity>
     </application>
 
 </manifest>

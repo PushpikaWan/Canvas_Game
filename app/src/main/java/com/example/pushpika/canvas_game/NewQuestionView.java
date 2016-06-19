@@ -47,7 +47,12 @@ public class NewQuestionView extends AppCompatActivity {
         editor.commit();
         Log.v("happened current share",String.valueOf(settings.getString("Current_position","DefaultClass")));
         Log.v("happened cu","there is current share");
-
+        if(MainActivity.target_class.equals("V")){
+            //when got 100 marks
+            Intent intent = new Intent(this, WinActivity.class);
+            startActivity(intent);
+            finish();
+        }
 
         setContentView(R.layout.activity_new_question_view);
         pos_view = (TextView) findViewById(R.id.position_number);
@@ -56,6 +61,13 @@ public class NewQuestionView extends AppCompatActivity {
         textView = (TextView) findViewById(R.id.textView2);
         dynamic_content();
         show_message(quest_topic,quest_desc);
+    }
+
+    @Override
+    public void onBackPressed() {
+        Intent intent = new Intent(this, MainActivity.class);
+        startActivity(intent);
+        finish();
     }
 
     public void dynamic_content(){
