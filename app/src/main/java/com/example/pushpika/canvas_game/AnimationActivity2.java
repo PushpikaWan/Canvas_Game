@@ -1,13 +1,18 @@
 package com.example.pushpika.canvas_game;
 
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.view.View;
+import android.os.Handler;
+import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.Window;
 import android.view.WindowManager;
 
-public class HelpActivity extends AppCompatActivity {
+
+public class AnimationActivity2 extends AppCompatActivity {
+    //Activity_animation_layout activity_animation_layout;
+    board_layout bd_layout;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -15,18 +20,16 @@ public class HelpActivity extends AppCompatActivity {
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
                 WindowManager.LayoutParams.FLAG_FULLSCREEN);
-        setContentView(R.layout.activity_help);
-    }
 
-    public void Go_Home(View view){
-        Intent intent = new Intent(this, MainActivity.class);
-        startActivity(intent);
-        finish();
+        bd_layout = new board_layout(this);
+        bd_layout.setBackgroundResource(R.drawable.board_new);
+        //setContentView(activity_animation_layout);
+        setContentView(bd_layout);
     }
 
     @Override
     public void onBackPressed() {
-        Intent intent = new Intent(this, MainActivity.class);
+        Intent intent = new Intent(this, NewQuestionView.class);
         startActivity(intent);
         finish();
     }

@@ -9,27 +9,28 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.Display;
 import android.view.View;
+import android.view.Window;
+import android.view.WindowManager;
 
 
 public class AnimationActivity extends AppCompatActivity {
     //Activity_animation_layout activity_animation_layout;
     board_layout bd_layout;
-    public static int position_width=0,position_height=0,cur_position=1,is_increment=-1,current_pos=1,target_pos=1;
-    public static String target_class="P"; // A for
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        //getActionBar().hide();
-        //activity_animation_layout = new Activity_animation_layout(this);
-        //getSupportActionBar().hide();
+        requestWindowFeature(Window.FEATURE_NO_TITLE);
+        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
+                WindowManager.LayoutParams.FLAG_FULLSCREEN);
         bd_layout = new board_layout(this);
         bd_layout.setBackgroundResource(R.drawable.board_new);
         //setContentView(activity_animation_layout);
         setContentView(bd_layout);
-        Log.i("TAG", "current pos-- "+ AnimationActivity.current_pos);
-        Log.i("TAG", "target pos" + AnimationActivity.target_pos);
-        Log.i("TAG", "Target class " + AnimationActivity.target_class);
+        Log.i("TAG", "current pos-- "+ MainActivity.current_pos);
+        Log.i("TAG", "target pos" + MainActivity.target_pos);
+        Log.i("TAG", "Target class " + MainActivity.target_class);
         Handler handler = new Handler();
         //final Intent intent = new Intent(this, MainActivity.class);
         final Intent intent = new Intent(this, NewQuestionView.class);
@@ -40,6 +41,7 @@ public class AnimationActivity extends AppCompatActivity {
                 finish();
             }
         }, 5000);
+
 
     }
 }

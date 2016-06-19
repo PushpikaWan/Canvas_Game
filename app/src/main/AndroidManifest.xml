@@ -25,6 +25,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".AnimationActivity" />
+        <activity android:name=".AnimationActivity2" />
         <activity android:name=".Question_view" />
         <activity
             android:name=".database_data_entry_initial"

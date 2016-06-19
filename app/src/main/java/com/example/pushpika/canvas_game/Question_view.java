@@ -52,7 +52,7 @@ public class Question_view extends AppCompatActivity {
         LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(
                 LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT);
 
-        final Question_object question_object = mydb.get_data_object(AnimationActivity.target_class); // we can change class according to question
+        final Question_object question_object = mydb.get_data_object(MainActivity.target_class); // we can change class according to question
 
         quest_topic=question_object.question_topic;
         quest_desc = question_object.question_desc;
@@ -233,16 +233,17 @@ public class Question_view extends AppCompatActivity {
         }
     }
 
+
     public void increment_board(){
         //Intent transition_page = new Intent(this,Question_view.class);
         Intent transition_page = new Intent(this,AnimationActivity.class);
-        AnimationActivity.current_pos=Integer.parseInt(start_node);
-        AnimationActivity.is_increment = 1;
-        AnimationActivity.target_pos = Integer.parseInt(promotion_node);
-        AnimationActivity.target_class = promotion_class;
-        Log.i("TAG", "current pos-- "+ AnimationActivity.current_pos);
-        Log.i("TAG", "target pos"+ AnimationActivity.target_pos);
-        Log.i("TAG", "Target class "+ AnimationActivity.target_class);
+        MainActivity.current_pos=Integer.parseInt(start_node);
+        MainActivity.is_increment = 1;
+        MainActivity.target_pos = Integer.parseInt(promotion_node);
+        MainActivity.target_class = promotion_class;
+        Log.i("TAG", "current pos-- "+ MainActivity.current_pos);
+        Log.i("TAG", "target pos"+ MainActivity.target_pos);
+        Log.i("TAG", "Target class "+ MainActivity.target_class);
         startActivity(transition_page);
         finish();
 
@@ -250,13 +251,13 @@ public class Question_view extends AppCompatActivity {
 
     public void decrement_board(){
         Intent transition_page = new Intent(this,AnimationActivity.class);
-        AnimationActivity.current_pos=Integer.parseInt(start_node);
-        AnimationActivity.is_increment = 0;
-        AnimationActivity.target_pos = Integer.parseInt(punishment_node);
-        AnimationActivity.target_class = punishment_class;
-        Log.i("TAG", "current pos-- "+ AnimationActivity.current_pos);
-        Log.i("TAG", "target pos"+ AnimationActivity.target_pos);
-        Log.i("TAG", "Target class "+ AnimationActivity.target_class);
+        MainActivity.current_pos=Integer.parseInt(start_node);
+        MainActivity.is_increment = 0;
+        MainActivity.target_pos = Integer.parseInt(punishment_node);
+        MainActivity.target_class = punishment_class;
+        Log.i("TAG", "current pos-- "+ MainActivity.current_pos);
+        Log.i("TAG", "target pos"+ MainActivity.target_pos);
+        Log.i("TAG", "Target class "+ MainActivity.target_class);
         startActivity(transition_page);
         finish();
     }
