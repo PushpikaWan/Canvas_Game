@@ -34,13 +34,15 @@ public class MainActivity extends Activity {
         boolean firstRun = settings.getBoolean("firstRun", true);
 
         //set current class
-        target_class = settings.getString("Current_position","P");
-        Log.v("happened curr sharemain",String.valueOf(settings.getString("Current_position","DefaultClass")));
+        target_class = settings.getString("Current_class","P");
+        current_pos = settings.getInt("current_pos",1);
+        cur_position=current_pos;
         if (firstRun) {
             // here run your first-time instructions, for example :
             SharedPreferences settings1 = getSharedPreferences("prefs", 0);
             SharedPreferences.Editor editor = settings1.edit();
-            editor.putString("Current_position","P");
+            editor.putString("Current_class","P");
+            editor.putInt("current_pos",1);
             editor.commit();
 
             Intent intent = new Intent(this,database_data_entry_initial.class);

@@ -667,8 +667,8 @@ public class database_data_entry_initial extends AppCompatActivity {
         //question 16 class - p
 
         mydb.insert_Tag("-2;\n","VARIABLE","None");//id=142
-        mydb.insert_Tag("goto(","VARIABLE","None");//id=143
-        mydb.insert_Tag("+2;\n","MAIN","None");//id=144
+        mydb.insert_Tag("goto(","MAIN","None");//id=143
+        mydb.insert_Tag("+2;\n","VARIABLE","None");//id=144
         mydb.insert_Tag("myScore","MAIN","None");//id=145
         mydb.insert_Tag(");\n","VARIABLE","None");//id=146
         mydb.insert_Tag("=","VARIABLE","None");//id=147
@@ -742,7 +742,7 @@ public class database_data_entry_initial extends AppCompatActivity {
         mydb.insert_Tag("10","VARIABLE","None");//id=188
         mydb.insert_Tag("goto","MAIN","None");//id=189
         mydb.insert_Tag("5","VARIABLE","None");//id=190
-        mydb.insert_Tag("add","MAIN","None");//id=191
+        mydb.insert_Tag("divide","MAIN","None");//id=191
         mydb.insert_Tag(")","VARIABLE","None");//id=192
         mydb.insert_Tag("(","VARIABLE","None");//id=193
         mydb.insert_Tag(";","VARIABLE","None");//id=194

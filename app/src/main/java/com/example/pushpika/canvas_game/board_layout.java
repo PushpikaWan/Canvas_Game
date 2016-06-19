@@ -59,7 +59,7 @@ public class board_layout extends View {
                 x=(MainActivity.current_pos%10)-1;
             }
             else{
-                x=10 -(MainActivity.current_pos%10);
+                x= 10 -(MainActivity.current_pos%10);
             }
             Log.v("happened x and y",String.valueOf(x)+" and "+ String.valueOf(y));
             MainActivity.position_height = (int) Math.ceil((canvas.getHeight()/10*y+(canvas.getHeight()/50)));   //

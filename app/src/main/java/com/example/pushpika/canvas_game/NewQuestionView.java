@@ -42,7 +42,8 @@ public class NewQuestionView extends AppCompatActivity {
         //share current stage
         SharedPreferences settings = getSharedPreferences("prefs", 0);
         SharedPreferences.Editor editor = settings.edit();
-        editor.putString("Current_position",MainActivity.target_class);
+        editor.putString("Current_class",MainActivity.target_class);
+        editor.putInt("current_pos",MainActivity.current_pos);
         editor.commit();
         Log.v("happened current share",String.valueOf(settings.getString("Current_position","DefaultClass")));
         Log.v("happened cu","there is current share");
@@ -50,8 +51,8 @@ public class NewQuestionView extends AppCompatActivity {
 
         setContentView(R.layout.activity_new_question_view);
         pos_view = (TextView) findViewById(R.id.position_number);
-        compulsary_words_field = (LinearLayout) findViewById(R.id.optArea);
-        optional_words_field = (LinearLayout) findViewById(R.id.mainArea);
+        compulsary_words_field = (LinearLayout) findViewById(R.id.mainArea);
+        optional_words_field = (LinearLayout) findViewById(R.id.optArea);
         textView = (TextView) findViewById(R.id.textView2);
         dynamic_content();
         show_message(quest_topic,quest_desc);
@@ -108,7 +109,8 @@ public class NewQuestionView extends AppCompatActivity {
 
             // Give button an ID
             btn.setId(j);
-            btn.setText(question_object.keywords[j]);
+            btn.setText((question_object.keywords[j]));
+            btn.setTransformationMethod(null);
             btn.setTextSize(Float.parseFloat("12"));
             //btn.setBackgroundColor(Color.parseColor("#CBE32D"));
             // set the layoutParams on the button
@@ -152,6 +154,7 @@ public class NewQuestionView extends AppCompatActivity {
             // Give button an ID
             btn.setId(i);
             btn.setText(question_object.variable[i]);
+            btn.setTransformationMethod(null);
             btn.setTextSize(Float.parseFloat("12"));
             // set the layoutParams on the button
             btn.setLayoutParams(params);
