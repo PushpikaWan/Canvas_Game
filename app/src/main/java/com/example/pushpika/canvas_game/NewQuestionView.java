@@ -216,21 +216,25 @@ public class NewQuestionView extends AppCompatActivity {
         cur_seq = cur_seq.replaceAll(",", "");
         Log.i("TAG", "The answer sequence is" +answer_get); //set text for button action
         Log.i("TAG", "The current sequence is" + cur_seq ); //set text for button action
-        if(answer_get.equals(cur_seq)){
-            //return true
-            //correctAnswer(view);
-            textView.setBackgroundColor(Color.GREEN);
-            increment_board();
+        if(answer_get.equals(cur_seq)){ //return true
+
+            //correct notification + increment board
+            correctAnswer(view);
+
+            //textView.setBackgroundColor(Color.GREEN);
+            //increment_board();
 
         }
         else if(cur_seq.equals("")){
             //input field is empty
         }
-        else{
-            //return false
-           // wrongAnswer(view);
-            textView.setBackgroundColor(Color.RED);
-            decrement_board();
+        else{ //return false
+
+            //wrong notification + decrement board
+            wrongAnswer(view);
+
+            //textView.setBackgroundColor(Color.RED);
+            //decrement_board();
         }
     }
 
@@ -274,6 +278,7 @@ public class NewQuestionView extends AppCompatActivity {
                             @Override
                             public void onClick(DialogInterface dialog, int which) {
                                 dialog.dismiss();
+                                increment_board();
                             }
                         }).
                         setView(image);
@@ -289,10 +294,11 @@ public class NewQuestionView extends AppCompatActivity {
         AlertDialog.Builder builder =
                 new AlertDialog.Builder(this).
                         setMessage("Error!! Your answer is incorrect.").
-                        setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                        setNeutralButton("OK", new DialogInterface.OnClickListener() {
                             @Override
                             public void onClick(DialogInterface dialog, int which) {
                                 dialog.dismiss();
+                                decrement_board();
                             }
                         }).
                         setView(image);
