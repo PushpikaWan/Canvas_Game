@@ -11,6 +11,7 @@ import android.view.Display;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
+import android.widget.Toast;
 
 
 public class AnimationActivity extends AppCompatActivity {
@@ -44,4 +45,11 @@ public class AnimationActivity extends AppCompatActivity {
 
 
     }
+
+    @Override
+    public void onBackPressed() {
+        Toast.makeText(this, "Please wait .....", Toast.LENGTH_SHORT).show();
+    }
+
+
 }

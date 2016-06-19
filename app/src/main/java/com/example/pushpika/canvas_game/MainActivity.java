@@ -32,8 +32,17 @@ public class MainActivity extends Activity {
 
         SharedPreferences settings = getSharedPreferences("prefs", 0);
         boolean firstRun = settings.getBoolean("firstRun", true);
+
+        //set current class
+        target_class = settings.getString("Current_position","P");
+        Log.v("happened curr sharemain",String.valueOf(settings.getString("Current_position","DefaultClass")));
         if (firstRun) {
             // here run your first-time instructions, for example :
+            SharedPreferences settings1 = getSharedPreferences("prefs", 0);
+            SharedPreferences.Editor editor = settings1.edit();
+            editor.putString("Current_position","P");
+            editor.commit();
+
             Intent intent = new Intent(this,database_data_entry_initial.class);
             startActivity(intent);
             finish();
@@ -50,10 +59,7 @@ public class MainActivity extends Activity {
 
 
     public void Go_Ques(View view){
-        final Animation animation_translate_2 = AnimationUtils.loadAnimation(this,R.anim.translate_anim);
         Intent transition_page = new Intent(this,NewQuestionView.class);
-        //Intent transition_page = new Intent(this,database_data_entry_initial.class);
-        view.startAnimation(animation_translate_2);
         startActivity(transition_page);
         finish();
     }

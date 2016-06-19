@@ -6,6 +6,7 @@ import android.graphics.BitmapFactory;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
+import android.media.MediaActionSound;
 import android.util.Log;
 import android.view.View;
 
@@ -77,12 +78,12 @@ public class board_layout extends View {
                         move_forward += 1;
                         transition_sequence[i] = "F";
                         Log.v("happened move",  "1 forward");
-                    } else { //move backward
+                    } else if(MainActivity.current_pos!=MainActivity.target_pos) { //move backward
                         move_backword += 1;
                         transition_sequence[i] = "B";
                         Log.v("happened move",  "1 backward");
                     }
-                } else { //move upward
+                } else if(MainActivity.current_pos!= MainActivity.target_pos) { //move upward
                     move_upward += 1;
                     transition_sequence[i] = "U";
                     Log.v("happened move",  "1 upward");
@@ -101,15 +102,19 @@ public class board_layout extends View {
                         move_forward += 1;
                         transition_sequence[j] = "F";
                         Log.v("happened move",  "1 forward");
-                    } else { //move backward
+                    } else if(MainActivity.current_pos!=MainActivity.target_pos){ //move backward
                         move_backword += 1;
                         transition_sequence[j] = "B";
                         Log.v("happened move",  "1 backward");
+                        Log.v("happened cur",  "1 backward"+MainActivity.current_pos);
+                        Log.v("happened tar",  "1 backward"+MainActivity.target_pos);
                     }
-                } else { //move upward
+                } else if(MainActivity.current_pos!=MainActivity.target_pos) { //move upward
                     move_downward += 1;
                     transition_sequence[j] = "D";
                     Log.v("happened move",  "1 downward");
+                    Log.v("happened cur",  "1 downward"+MainActivity.current_pos);
+                    Log.v("happened tar",  "1 downward"+MainActivity.target_pos);
                 }
                 MainActivity.current_pos -= 1;
                 j++;

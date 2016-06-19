@@ -5,6 +5,7 @@ import android.app.AlertDialog;
 import android.app.Dialog;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -37,6 +38,15 @@ public class NewQuestionView extends AppCompatActivity {
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
                 WindowManager.LayoutParams.FLAG_FULLSCREEN);
+
+        //share current stage
+        SharedPreferences settings = getSharedPreferences("prefs", 0);
+        SharedPreferences.Editor editor = settings.edit();
+        editor.putString("Current_position",MainActivity.target_class);
+        editor.commit();
+        Log.v("happened current share",String.valueOf(settings.getString("Current_position","DefaultClass")));
+        Log.v("happened cu","there is current share");
+
 
         setContentView(R.layout.activity_new_question_view);
         pos_view = (TextView) findViewById(R.id.position_number);

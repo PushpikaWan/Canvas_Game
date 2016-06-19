@@ -3,6 +3,7 @@ package com.example.pushpika.canvas_game;
 import android.app.AlertDialog;
 import android.app.Dialog;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.database.Cursor;
 import android.graphics.Color;
 import android.support.v7.app.AppCompatActivity;
@@ -35,6 +36,9 @@ public class Question_view extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+
+
         setContentView(R.layout.activity_question_view);
         pos_view = (TextView) findViewById(R.id.position_number);
         compulsary_words_field = (LinearLayout) findViewById(R.id.compulsary_words);
@@ -42,6 +46,7 @@ public class Question_view extends AppCompatActivity {
         textView = (TextView) findViewById(R.id.text1);
         dynamic_content();
         show_message(quest_topic,quest_desc);
+
     }
 
     public void dynamic_content(){
