@@ -240,7 +240,8 @@
                             android:background="@android:color/holo_orange_dark"
                             android:textColor="@color/background_floating_material_light"
                             android:padding="10dp"
-                            android:onClick="Go_Ques" />
+                            android:onClick="Go_Ques"
+                            android:allowUndo="true" />
                     </LinearLayout>
                 </LinearLayout>
 

@@ -29,8 +29,8 @@ public class database_data_entry_initial extends AppCompatActivity {
                 WindowManager.LayoutParams.FLAG_FULLSCREEN);
 
         setContentView(R.layout.activity_database_data_entry_initial);
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
+        //Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        //setSupportActionBar(toolbar);
         btn = (Button) findViewById(R.id.go_firstpage);
         btn.setVisibility(View.GONE);
         mydb = new DatabaseHelper(this);
@@ -38,14 +38,14 @@ public class database_data_entry_initial extends AppCompatActivity {
         insertData_Question();
         insertData_tag_ques_assist();
 
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
+        /*FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
                         .setAction("Action", null).show();
             }
-        });
+        });*/
     }
 
     public void go_first_page(View view){
