@@ -123,7 +123,7 @@
                                     android:layout_height="wrap_content"
                                     android:id="@+id/go_firstpage"
                                     android:text="Start new Session"
-                                    android:onClick="go_first_page"
+                                    android:onClick="reset_data"
                                     android:background="#fa9c37"
                                     android:textColor="#ffffff"
                                     android:textSize="18sp" />

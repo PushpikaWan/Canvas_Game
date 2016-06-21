@@ -325,7 +325,7 @@ public class database_data_entry_initial extends AppCompatActivity {
 //        Q1
         mydb.insert_Question(
                 "Increase value",
-                "Increase your score by 2 only using myScore variable and + operator.",
+                "Increase your score by 2 only using myScore variable and + operator.Then print it",
                 "P","145,147,145,144,143,145,146","1","3","1","A","P"
         );
 //        Q2
@@ -337,7 +337,7 @@ public class database_data_entry_initial extends AppCompatActivity {
 //        Q3
         mydb.insert_Question(
                 "Pass by value",
-                "Using divide function, goto 10th position.",
+                "Using divide function, increase your score to 6.",
                 "T","189,193,191,193,196,187,195,192,192,194","5","6","5","U","T"
         );
 //        Q4
@@ -349,7 +349,7 @@ public class database_data_entry_initial extends AppCompatActivity {
 //        Q5
         mydb.insert_Question(
                 "Modular problem",
-                "Write a function to return modular value and run it on main function to increase your score by 3.\n* You should find a suitable divisor for this",
+                "Write a function to return modular value and run it on main function to increase your score by 3 and print it\n * You should find a suitable divisor for this",
                 "Q","153,152,157,160,150,157,148,155,153,159,156,154,152,149,151,158,156,151","7","10","5","R","T");
 //        Q6
         mydb.insert_Question(
@@ -667,7 +667,7 @@ public class database_data_entry_initial extends AppCompatActivity {
         //question 16 class - p
 
         mydb.insert_Tag("-2;\n","VARIABLE","None");//id=142
-        mydb.insert_Tag("goto(","MAIN","None");//id=143
+        mydb.insert_Tag("print(","MAIN","None");//id=143
         mydb.insert_Tag("+2;\n","VARIABLE","None");//id=144
         mydb.insert_Tag("myScore","MAIN","None");//id=145
         mydb.insert_Tag(");\n","VARIABLE","None");//id=146
@@ -689,7 +689,7 @@ public class database_data_entry_initial extends AppCompatActivity {
         mydb.insert_Tag("4;\n","VARIABLE","None");//id=155
         mydb.insert_Tag("value","VARIABLE","None");//id=156
         mydb.insert_Tag("a","VARIABLE","None");//id=157
-        mydb.insert_Tag("goto(","VARIABLE","None");//id=158
+        mydb.insert_Tag("print(","VARIABLE","None");//id=158
         mydb.insert_Tag("main():\n","VARIABLE","None");//id=159
         mydb.insert_Tag("):\n","VARIABLE","None");//id=160
 
@@ -740,14 +740,14 @@ public class database_data_entry_initial extends AppCompatActivity {
 
         mydb.insert_Tag(",","VARIABLE","None");//id=187
         mydb.insert_Tag("10","VARIABLE","None");//id=188
-        mydb.insert_Tag("goto","MAIN","None");//id=189
+        mydb.insert_Tag("increase","MAIN","None");//id=189
         mydb.insert_Tag("5","VARIABLE","None");//id=190
         mydb.insert_Tag("divide","MAIN","None");//id=191
         mydb.insert_Tag(")","VARIABLE","None");//id=192
         mydb.insert_Tag("(","VARIABLE","None");//id=193
         mydb.insert_Tag(";","VARIABLE","None");//id=194
         mydb.insert_Tag("2","VARIABLE","None");//id=195
-        mydb.insert_Tag("20","VARIABLE","None");//id=196
+        mydb.insert_Tag("12","VARIABLE","None");//id=196
 
 
         //189,193,191,193,196,187,195,192,192,194

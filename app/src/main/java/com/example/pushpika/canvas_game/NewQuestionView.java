@@ -43,9 +43,9 @@ public class NewQuestionView extends AppCompatActivity {
         SharedPreferences settings = getSharedPreferences("prefs", 0);
         SharedPreferences.Editor editor = settings.edit();
         editor.putString("Current_class",MainActivity.target_class);
-        editor.putInt("current_pos",MainActivity.current_pos);
+        editor.putInt("Current_pos",MainActivity.current_pos);
         editor.commit();
-        Log.v("happened current share",String.valueOf(settings.getString("Current_position","DefaultClass")));
+        Log.v("happened current share",String.valueOf(settings.getInt("Current_pos",0)));
         Log.v("happened cu","there is current share");
         if(MainActivity.target_class.equals("V")){
             //when got 100 marks
@@ -219,6 +219,7 @@ public class NewQuestionView extends AppCompatActivity {
     public void Go_Board(View view){
         Intent transition_page1 = new Intent(this,AnimationActivity2.class);
         startActivity(transition_page1);
+        finish();
 
     }
 
@@ -234,6 +235,7 @@ public class NewQuestionView extends AppCompatActivity {
     public void Go_Home(View view){
         Intent intent = new Intent(this, MainActivity.class);
         startActivity(intent);
+        finish();
     }
 
 

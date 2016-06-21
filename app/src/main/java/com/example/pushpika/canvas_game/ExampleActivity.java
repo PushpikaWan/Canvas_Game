@@ -22,6 +22,7 @@ public class ExampleActivity extends AppCompatActivity {
     public void Go_Home(View view){
         Intent intent = new Intent(this, MainActivity.class);
         startActivity(intent);
+        finish();
     }
 
     @Override
