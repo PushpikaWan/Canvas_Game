@@ -28,8 +28,8 @@ public class board_layout extends View {
         super(context);
 
         //setBackgroundResource(R.drawable.boardnew);
-        x_dir = 50;
-        y_dir = 50;
+        x_dir = 10;
+        y_dir = 10;
     }
 
     @Override
@@ -96,7 +96,7 @@ public class board_layout extends View {
             Log.v("happened decrement",String.valueOf(MainActivity.target_pos));
             //when decrement
             int j = 0;
-            while (MainActivity.current_pos >= MainActivity.target_pos) {
+            while (MainActivity.current_pos > MainActivity.target_pos) {
                 if ((MainActivity.current_pos - 1) % 10 != 0) {
                     if ((int) Math.floor((MainActivity.current_pos-1)/ 10) % 2 != 0) { //move forward
                         move_forward += 1;

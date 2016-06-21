@@ -28,6 +28,8 @@ public class WinActivity extends AppCompatActivity {
         Log.v("Data reset","successfully");
         Log.v("happened current share",String.valueOf(settings.getString("Current_class","DefaultClass")));
         Log.v("happened current share",String.valueOf(settings.getInt("Current_pos",0)));
+        MainActivity.position_height=0;
+        MainActivity.position_width=0;
         //Intent intent = new Intent(this, MainActivity.class);
         //startActivity(intent);
        /* Intent i = getBaseContext().getPackageManager()
