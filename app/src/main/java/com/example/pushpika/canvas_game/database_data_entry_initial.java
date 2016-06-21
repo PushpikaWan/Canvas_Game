@@ -438,7 +438,7 @@ public class database_data_entry_initial extends AppCompatActivity {
         mydb.insert_Question(
                 "Bubble sort",
                 "Implement the bubble sort algorithm",
-                "O","139,133,138,134,141,134,140,132,136,135,130,137","93","100","87","V","S");
+                "O","139,133,138,134,141,134,140,132,136,135,130","93","100","87","V","S");
 
     }
 
@@ -509,7 +509,7 @@ public class database_data_entry_initial extends AppCompatActivity {
         mydb.insert_Tag("for-each( ","MAIN","None");//id=39
         mydb.insert_Tag("sum =+item; } \n","VARIABLE","None");//id=40
         mydb.insert_Tag("data =[20,30,40,50,60]; sum=0; \n","VARIABLE","None");//id=41
-        mydb.insert_Tag(" item in data ) { \n","VARIABLE","None");//id=42
+        mydb.insert_Tag(" data in item ) { \n","VARIABLE","None");//id=42
         mydb.insert_Tag("sum = sum+item; }\n","VARIABLE","None");//id=43
 
         //41,39,35,43,37
@@ -646,7 +646,7 @@ public class database_data_entry_initial extends AppCompatActivity {
 
 
         mydb.insert_Tag("(j,j+1); \n","VARIABLE","None");//id=130
-        mydb.insert_Tag("(j=0;j<=array.length-1;j++){ \n","VARIABLE","None");//id=131
+        mydb.insert_Tag("(j=0;j<=array.length-1;j++): \n","VARIABLE","None");//id=131
         mydb.insert_Tag("if","VARIABLE","None");//id=132
         mydb.insert_Tag("bubble_sort","MAIN","None");//id=133
         mydb.insert_Tag("for","MAIN","None");//id=134
@@ -655,12 +655,12 @@ public class database_data_entry_initial extends AppCompatActivity {
         mydb.insert_Tag("(i,i+1); \n","VARIABLE","None");//id=137
         mydb.insert_Tag("(array): \n","MAIN","None");//id=138
         mydb.insert_Tag("function","MAIN","None");//id=139
-        mydb.insert_Tag("(j=0;j<=array.length-1-i;j++){ \n","VARIABLE","None");//id=140
-        mydb.insert_Tag("(i=0;i<=array.length;i++){ \n","VARIABLE","None");//id=141
+        mydb.insert_Tag("(j=0;j<=array.length-1-i;j++): \n","VARIABLE","None");//id=140
+        mydb.insert_Tag("(i=0;i<=array.length;i++): \n","VARIABLE","None");//id=141
 
 
 
-        //139,133,138,134,141,134,140,132,136,135,130,137
+        //139,133,138,134,141,134,140,132,136,135,130
 
         //--------------------
 
