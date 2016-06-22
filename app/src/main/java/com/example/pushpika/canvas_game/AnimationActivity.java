@@ -26,7 +26,7 @@ public class AnimationActivity extends AppCompatActivity {
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
                 WindowManager.LayoutParams.FLAG_FULLSCREEN);
         bd_layout = new board_layout(this);
-        bd_layout.setBackgroundResource(R.drawable.board_new);
+        bd_layout.setBackgroundResource(R.drawable.board_new2);
         //setContentView(activity_animation_layout);
         setContentView(bd_layout);
         Log.i("TAG", "current pos-- "+ MainActivity.current_pos);

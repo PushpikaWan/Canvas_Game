@@ -343,7 +343,7 @@ public class database_data_entry_initial extends AppCompatActivity {
 //        Q4
         mydb.insert_Question(
                 "Pass by reference",
-                "Using add function, goto 12th position.\n function add(a,b){\n\treturn a+b;\n}\n You can use myScore parameter without declaring",
+                "Using add function, increase your score to 7.\n function add(a,b){\n\treturn a+b;\n}\n You can use myScore parameter without declaring.\nSet your score to n using setMyScore(n).",
                 "U","201,198,197,199,204,200,207,200,206,201,202,202,199","6","7","5","Q","T"
         );
 //        Q5
@@ -761,7 +761,7 @@ public class database_data_entry_initial extends AppCompatActivity {
         mydb.insert_Tag("value","MAIN","None");//id=201
         mydb.insert_Tag(")","VARIABLE","None");//id=202
         mydb.insert_Tag("myScore-","MAIN","None");//id=203
-        mydb.insert_Tag("goto","MAIN","None");//id=204
+        mydb.insert_Tag("setMyScore","MAIN","None");//id=204
         mydb.insert_Tag(">","VARIABLE","None");//id=205
         mydb.insert_Tag("myScore+","MAIN","None");//id=206
         mydb.insert_Tag("add","MAIN","None");//id=207
