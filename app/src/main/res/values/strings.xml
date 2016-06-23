@@ -8,7 +8,7 @@
     <string name="example">Example</string>
     <string name="about">About</string>
     <string name="help">Help</string>
-    <string name="think_solve_score">Think . Solve . Score .</string>
+    <string name="think_solve_score">Think . Solve . Score</string>
     <string name="take_me_to_the_quest">Take me to the Quest</string>
     <string name="programming_teacher">Programming Teacher</string>
     <string name="_2016_programming_teacher_all_rights_reserved">©2016 Programming Teacher. All rights reserved.</string>
@@ -24,4 +24,12 @@
     <string name="get_started">Get Started</string>
     <string name="you_going_to_learn_programming_with_programming_teacher">You going to learn programming with Programming teacher.</string>
     <string name="help_text"> \n\t*. You have to write pseudo code for solution. \n\n \t*. We are not aim any specific programming language. But we suppose you get clear idea about pseudo codes. In gaming area this you may use following functions and variables.\n\n\n  \t1. myScore - your current possition in the game board.\n\n  \t2. isPrime(n) - check wether given parameter is prime or not.\n\n  \t3. s.upper() - Converts given string(s) to upper case\n\n  \t4. input() - get ab input from user\n\n  \t5. modulo - the modulo operation finds the remainder after division of one number by another\n\tUsege : a modulo b\n\n  \t6. function - to declare a function \n\n  \t7. devide(a,b) - returns answer after a devide by b \n\n  \t8. setMyScore(n) - set your score/position to n</string>
+    <string name="click_take_me_to_the_quiz_to_begin_the_game">Click “Take me to the quiz” to begin the game.</string>
+    <string name="you_will_see_your_first_question_here">You will see your first question here.</string>
+    <string name="txt_three">Optional keywords are on your left and compulsory keywords are on your left.</string>
+    <string name="txt_six">Next question will appear once you correctly finished first question.</string>
+    <string name="txt_four">Arrange the answer to the question by clicking on keywords.</string>
+    <string name="txt_end">Think . Solve . Score</string>
+    <string name="txt_five">Click “Undo action ” to reset your selections. Click “Check answer” once you finished. You can use the “Game board icon to view your position”.
+</string>
 </resources>

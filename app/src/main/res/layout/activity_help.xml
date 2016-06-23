@@ -175,7 +175,10 @@
                             android:text="@string/help_text"
                             android:textSize="20dp"
                             android:id="@+id/textView2"
-                            android:textColor="#272323" />
+                            android:textColor="#272323"
+                            android:paddingLeft="15dp"
+                            android:paddingRight="15dp"
+                            android:paddingBottom="10dp" />
                     </ScrollView>
 
                 </LinearLayout>
