@@ -1,5 +1,6 @@
 package com.example.pushpika.canvas_game;
 
+import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.Intent;
 import android.database.Cursor;
@@ -16,7 +17,7 @@ import android.widget.Toast;
 
 import java.nio.channels.NonReadableChannelException;
 
-public class database_data_entry_initial extends AppCompatActivity {
+public class database_data_entry_initial extends Activity {
 
     DatabaseHelper mydb;
     Button btn;
@@ -324,119 +325,119 @@ public class database_data_entry_initial extends AppCompatActivity {
         // String question_class,String answer_sequence,String start_node,String promotion_node, String punishment_node, String promotion_class, String punishment_class){
 //        Q1
         mydb.insert_Question(
-                "Increase value",
+                "1-Increase value",
                 "Increase your score by 2 only using myScore variable and + operator.Then print it",
                 "P","145,147,145,144,143,145,146","1","3","1","A","P"
         );
 //        Q2
         mydb.insert_Question(
-                "Swap ",
+                "2-Swap ",
                 "SWAP two values , x=10 and y=20 using temp variable",
                 "A","5,2,1,3,4","3","5","3","T", "A"
         );
 //        Q3
         mydb.insert_Question(
-                "Pass by value",
+                "3-Pass by value",
                 "Using divide function, increase your score to 6.",
                 "T","189,193,191,193,196,187,195,192,192,194","5","6","5","U","T"
         );
 //        Q4
         mydb.insert_Question(
-                "Pass by reference",
+                "4-Pass by reference",
                 "Using add function, increase your score to 7.\n function add(a,b){\n\treturn a+b;\n}\n You can use myScore parameter without declaring.\nSet your score to n using setMyScore(n).",
                 "U","201,198,197,199,204,200,207,200,206,201,202,202,199","6","7","5","Q","T"
         );
 //        Q5
         mydb.insert_Question(
-                "Modular problem",
+                "5-Modular problem",
                 "Write a function to return modular value and run it on main function to increase your score by 3 and print it\n * You should find a suitable divisor for this",
                 "Q","153,152,157,160,150,157,148,155,153,159,156,154,152,149,151,158,156,151","7","10","5","R","T");
 //        Q6
         mydb.insert_Question(
-                "Recursive function",
+                "6-Recursive function",
                 "Write a recursive program to implement power function which returns a^b when pass parameters as a and b.",
                 "R","164,171,175,165,170,174,165,161,176,163,169,165,161,167,171,168,163","10","12","7","B","Q");
 //        Q7
         mydb.insert_Question(
-                "If-Else and isPrime() ",
+                "7-If-Else and isPrime() ",
                 "Check whether your score is prime or not",
                 "B", "10,9,8,6,7", "12", "14", "12", "C", "B"
         );
 //        Q8
         mydb.insert_Question(
-                "If-Elseif-else ",
+                "8-If-Elseif-else ",
                 "Use if-elseif and else conditions to put numbers into the correct categories.",
                 "C", "10,16,15,11,14,12,6,13", "14", "17", "12", "D", "B"
         );
 //        Q9
         mydb.insert_Question(
-                "Switch ",
+                "9-Switch ",
                 "Print month name when month number entered,if that month number is less than 4,print month name as an output",
                 "D", "20,18,23,19,17,22,25,17,24,26,17,21,17", "17", "22", "14", "E", "C"
         );
 //        Q10
         mydb.insert_Question(
-                "for loop ",
+                "10-for loop ",
                 "Print even numbers up to your score using for loop",
                 "E", "30,34,27,29,33,28,32", "22", "25", "22", "F", "E"
         );
 //        Q11
         mydb.insert_Question(
-                "for-each ",
+                "11-for-each ",
                 "Get the sum of this array using for-each loop",
                 "F", "41,39,35,43,37", "25", "31", "22", "G", "E"
         );
 //        Q12
         mydb.insert_Question(
-                "do-while ",
+                "12-do-while ",
                 "Print numbers 10 to 0 using do while loop",
                 "G", "47,48,44,46,45,52", "31", "35", "31", "H", "G"
         );
 //        Q13
         mydb.insert_Question(
-                "while-do ",
+                "13-while-do ",
                 "Print Fibonacci Series using while loop until your score",
                 "H", "58,53,56,54,57,55", "35", "39", "31", "I", "G"
         );
 //        Q14
         mydb.insert_Question(
-                "Break statement ",
+                "14-Break statement ",
                 "Print the 'Algo' word fragment from 'Algorithm' word using break statement",
                 "I", "65,60,64,59,61,66,62", "39", "42", "39", "J", "I"
         );
 //        Q15
         mydb.insert_Question(
-                "Continue statement ",
+                "15-Continue statement ",
                 "Print 'gain' word from 'grain' ",
                 "J", "72,74,71,67,75,69,73", "42","45","39","K","I");
 //        Q16
         mydb.insert_Question(
-                "Nested for loop",
+                "16-Nested for loop",
                 "Print prime number up to your position",
                 "K","82,81,87,80,83,81,85,76,89,77,79,86,77,88,90","45","57","45","L","K");
 //        Q17
         mydb.insert_Question(
-                "pattern-1",
+                "17-pattern ",
                 "Print below pattern.\n1111\n" +"1     1\n"+"1     1\n"+"1     1\n" +"1111",
                 "L","94,93,94,98,92,97,99,91,95,96","57","67","57","M","L");
 //        Q18
         mydb.insert_Question(
-                "Palindrome number",
+                "18-Palindrome number",
                 "Implement an algorithm for check input (number) is palindrome or not.",
                 "M","106,110,112,100,105,101,109,102,107,103,108,111","67","82","57","N","L");
 //        Q19
         mydb.insert_Question(
-                "Sentence Capitalizing",
+                "19-Sentence Capitalizing",
                 "Write a program that accepts sequence of lines as input and prints the lines after making all characters in the sentence capitalized.",
                 "N","120,127,124,129,115,119,116,123,125,121,118,128,126,122","82","87","82","S","N");
 //        Q20
         mydb.insert_Question(
-                "OOP concepts",
+                "20-OOP concepts",
                 "Consider following class.\n class Car{\n\tString color;\n\tfloat speed;\n\tvoid setColor(color);\n\tvoid setSpeed(color);\n\tvoid getSpeed();\n}\nCreate a car object and name it myCar.\nSet it's color to red.\nPrint the color of the car you created.",
                 "S","181,177,183,185,181,178,186,177,184,183,179,186,182,177,180,178,186","87","93","82","O","N");
 //        Q21
         mydb.insert_Question(
-                "Bubble sort",
+                "21-Bubble sort",
                 "Implement the bubble sort algorithm",
                 "O","139,133,138,134,141,134,140,132,136,135,130","93","100","87","V","S");
 
@@ -754,16 +755,16 @@ public class database_data_entry_initial extends AppCompatActivity {
 
         //question 21 class - u
 
-        mydb.insert_Tag("2","VARIABLE","None");//id=197
+        mydb.insert_Tag("1","VARIABLE","None");//id=197
         mydb.insert_Tag("=","VARIABLE","None");//id=198
         mydb.insert_Tag(";\n","VARIABLE","None");//id=199
         mydb.insert_Tag("(","VARIABLE","None");//id=200
         mydb.insert_Tag("value","MAIN","None");//id=201
         mydb.insert_Tag(")","VARIABLE","None");//id=202
-        mydb.insert_Tag("myScore-","MAIN","None");//id=203
+        mydb.insert_Tag("myScore + ","MAIN","None");//id=203
         mydb.insert_Tag("setMyScore","MAIN","None");//id=204
         mydb.insert_Tag(">","VARIABLE","None");//id=205
-        mydb.insert_Tag("myScore+","MAIN","None");//id=206
+        mydb.insert_Tag("myScore , ","MAIN","None");//id=206
         mydb.insert_Tag("add","MAIN","None");//id=207
 
 

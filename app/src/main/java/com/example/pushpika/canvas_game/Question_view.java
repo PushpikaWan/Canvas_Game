@@ -24,7 +24,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 
-public class Question_view extends AppCompatActivity {
+public class Question_view extends Activity {
     DatabaseHelper mydb;
     LinearLayout compulsary_words_field,optional_words_field;
     TextView textView,pos_view;

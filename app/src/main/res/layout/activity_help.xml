@@ -148,15 +148,50 @@
                     android:layout_height="match_parent"
                     android:layout_weight="8">
 
-                    <TextView
+                    <LinearLayout
+                        android:orientation="horizontal"
                         android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:textAppearance="?android:attr/textAppearanceMedium"
-                        android:text="Help"
-                        android:id="@+id/textView8"
-                        android:textSize="25dp"
-                        android:gravity="left|center"
-                        android:paddingLeft="20dp" />
+                        android:layout_height="match_parent">
+
+                        <LinearLayout
+                            android:orientation="vertical"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1">
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:textAppearance="?android:attr/textAppearanceMedium"
+                                android:text="Help"
+                                android:id="@+id/textView8"
+                                android:textSize="25dp"
+                                android:gravity="left|center"
+                                android:paddingLeft="20dp" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:orientation="vertical"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_weight="2">
+
+                            <Button
+                                style="?android:attr/buttonStyleSmall"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Send Feedback"
+                                android:id="@+id/button"
+                                android:textSize="10sp"
+                                android:textColor="#ffffff"
+                                android:layout_marginTop="5dp"
+                                android:layout_marginBottom="5dp"
+                                android:paddingLeft="10dp"
+                                android:paddingRight="10dp"
+                                android:background="@android:color/holo_orange_dark"
+                                android:onClick="sendFeedback" />
+                        </LinearLayout>
+                    </LinearLayout>
                 </LinearLayout>
 
                 <LinearLayout

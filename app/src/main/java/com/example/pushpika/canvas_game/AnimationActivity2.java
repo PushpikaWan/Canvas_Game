@@ -1,5 +1,6 @@
 package com.example.pushpika.canvas_game;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
@@ -9,7 +10,7 @@ import android.view.Window;
 import android.view.WindowManager;
 
 
-public class AnimationActivity2 extends AppCompatActivity {
+public class AnimationActivity2 extends Activity {
     //Activity_animation_layout activity_animation_layout;
     board_layout bd_layout;
 

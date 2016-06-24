@@ -1,6 +1,7 @@
 package com.example.pushpika.canvas_game;
 
 import android.app.ActionBar;
+import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.Dialog;
 import android.content.DialogInterface;
@@ -20,7 +21,7 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-public class NewQuestionView extends AppCompatActivity {
+public class NewQuestionView extends Activity {
 
     DatabaseHelper mydb;
     LinearLayout compulsary_words_field,optional_words_field;
