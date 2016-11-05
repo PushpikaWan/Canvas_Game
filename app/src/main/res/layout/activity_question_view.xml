@@ -15,19 +15,61 @@
     <LinearLayout
         android:orientation="horizontal"
         android:layout_width="match_parent"
-        android:layout_height="40dp"
+        android:layout_height="60dp"
         android:id="@+id/position_field"
         android:layout_marginBottom="10dp">
 
-        <TextView
-            android:layout_width="189dp"
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:textSize="20dp"
-            android:textAlignment="center"
-            android:background="@color/colorBackground"
-            android:paddingTop="5dp"
-            android:textStyle="normal"
-            android:hint="Position"/>
+            android:id="@+id/position_pre_field"
+            android:layout_marginBottom="10dp">
+            <TextView
+                android:layout_width="92dp"
+                android:layout_height="wrap_content"
+                android:textSize="20dp"
+                android:textAlignment="center"
+                android:background="@color/colorBackground"
+                android:paddingTop="5dp"
+                android:id="@+id/position_pre_field_text"
+                android:layout_marginRight="3dp"
+                android:textStyle="normal"
+                android:hint=""/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:text="Current Postion"
+                android:textSize="10dp"
+                android:id="@+id/textView2"
+                android:textAlignment="center"/>
+            </LinearLayout>
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:id="@+id/position_post_field"
+            android:layout_marginBottom="10dp">
+            <TextView
+                android:layout_width="92dp"
+                android:layout_height="wrap_content"
+                android:textSize="20dp"
+                android:textAlignment="center"
+                android:background="@color/colorBackground"
+                android:id="@+id/position_post_field_text"
+                android:paddingTop="5dp"
+                android:textStyle="normal"
+                android:hint=""/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:text="Next Position"
+                android:textSize="10dp"
+                android:id="@+id/textView3"
+                android:textAlignment="center"/>
+        </LinearLayout>
 
         <Button
             android:layout_width="match_parent"
@@ -57,8 +99,7 @@
         android:id="@+id/compulsary_words"
         android:orientation="vertical"
         android:background="@color/colorBackground"
-        android:layout_marginBottom="5dp"
-        android:foreground="@color/colorText">
+        android:layout_marginBottom="5dp">
     </LinearLayout>
 
     </ScrollView>
@@ -67,7 +108,8 @@
         android:layout_height="match_parent"
         android:layout_below="@+id/compulsary_words_scroll"
         android:layout_weight="5"
-        android:layout_marginTop="5dp">
+        android:layout_marginTop="5dp"
+        android:fillViewport="false">
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

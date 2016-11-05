@@ -211,7 +211,7 @@ public class Question_view extends AppCompatActivity {
             settingsDialog.setContentView(getLayoutInflater().inflate(R.layout.correct_answer_image
                     , null));
             settingsDialog.show();
-            textView.setBackgroundColor(Color.GREEN);
+            textView.setTextColor(Color.rgb(48, 207, 45));
             increment_board();
 
         }
@@ -222,7 +222,7 @@ public class Question_view extends AppCompatActivity {
             settingsDialog.setContentView(getLayoutInflater().inflate(R.layout.wrong_answer_image
                     , null));
             settingsDialog.show();
-            textView.setBackgroundColor(Color.RED);
+            textView.setTextColor(Color.rgb(245, 33, 33));
             decrement_board();
         }
     }
@@ -254,5 +254,4 @@ public class Question_view extends AppCompatActivity {
         startActivity(transition_page);
         finish();
     }
-
 }
