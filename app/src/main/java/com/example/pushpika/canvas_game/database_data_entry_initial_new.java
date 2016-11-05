@@ -409,119 +409,135 @@ public class database_data_entry_initial_new extends Activity {
     public void insertData_Question() {
         //(String question_topic,String question_desc,
         // String question_class,String answer_sequence,String start_node,String promotion_node, String punishment_node, String promotion_class, String punishment_class){
-//        Q16
+//
+
+        //meewa tika gahanna witarai tiyenne parana prashna walath promotion node , punishment node promotion class punshiment
+        // class  and statring node tika wenas karahan dena lakunu anuwa
+        //      Q1
+        //      Q2
+        //      Q3
+        //      Q4
+        //      Q5
+        //      Q6
+        //      Q7
+        //      Q8
+        //      Q9
+        //      Q10
+        //      Q11
+
+//      Q12
         mydb.insert_Question(
                 "1-Increase value",
                 "Increase your score by 2 only using myScore variable and + operator.Then print it",
                 "P","145,147,145,144,143,145,146","1","3","1","A","P"
         );
-//        Q17
+//      Q13
         mydb.insert_Question(
                 "2-Swap ",
                 "SWAP two values , x=10 and y=20 using temp variable",
                 "A","5,2,1,3,4","3","5","3","T", "A"
         );
-//        Q18
+//      Q14
         mydb.insert_Question(
                 "3-Pass by value",
                 "Using divide function, increase your score to 6.",
                 "T","189,193,191,193,196,187,195,192,192,194","5","6","5","U","T"
         );
-//        Q19
+//        Q15
         mydb.insert_Question(
                 "4-Pass by reference",
                 "Using add function, increase your score to 7.\n function add(a,b){\n\treturn a+b;\n}\n You can use myScore parameter without declaring.\nSet your score to n using setMyScore(n).",
                 "U","201,198,197,199,204,200,207,200,206,201,202,202,199","6","7","5","Q","T"
         );
-//        Q20
+//        Q16
         mydb.insert_Question(
                 "5-Modular problem",
                 "Write a function to return modular value and run it on main function to increase your score by 3 and print it\n * You should find a suitable divisor for this",
                 "Q","153,152,157,160,150,157,148,155,153,159,156,154,152,149,151,158,156,151","7","10","5","R","T");
-//        Q21
+//        Q17
         mydb.insert_Question(
                 "6-Recursive function",
                 "Write a recursive program to implement power function which returns a^b when pass parameters as a and b.",
                 "R","164,171,175,165,170,174,165,161,176,163,169,165,161,167,171,168,163","10","12","7","B","Q");
-//        Q22
+//        Q18
         mydb.insert_Question(
                 "7-If-Else and isPrime() ",
                 "Check whether your score is prime or not",
                 "B", "10,9,8,6,7", "12", "14", "12", "C", "B"
         );
-//        Q23
+//        Q19
         mydb.insert_Question(
                 "8-If-Elseif-else ",
                 "Use if-elseif and else conditions to put numbers into the correct categories.",
                 "C", "10,16,15,11,14,12,6,13", "14", "17", "12", "D", "B"
         );
-//        Q24
+//        Q20
         mydb.insert_Question(
                 "9-Switch ",
                 "Print month name when month number entered,if that month number is less than 4,print month name as an output",
                 "D", "20,18,23,19,17,22,25,17,24,26,17,21,17", "17", "22", "14", "E", "C"
         );
-//        Q25
+//        Q21
         mydb.insert_Question(
                 "10-for loop ",
                 "Print even numbers up to your score using for loop",
                 "E", "30,34,27,29,33,28,32", "22", "25", "22", "F", "E"
         );
-//        Q26
+//        Q22
         mydb.insert_Question(
                 "11-for-each ",
                 "Get the sum of this array using for-each loop",
                 "F", "41,39,35,43,37", "25", "31", "22", "G", "E"
         );
-//        Q27
+//        Q23
         mydb.insert_Question(
                 "12-do-while ",
                 "Print numbers 10 to 0 using do while loop",
                 "G", "47,48,44,46,45,52", "31", "35", "31", "H", "G"
         );
-//        Q28
+//        Q24
         mydb.insert_Question(
                 "13-while-do ",
                 "Print Fibonacci Series using while loop until your score",
                 "H", "58,53,56,54,57,55", "35", "39", "31", "I", "G"
         );
-//        Q29
+//        Q25
         mydb.insert_Question(
                 "14-Break statement ",
                 "Print the 'Algo' word fragment from 'Algorithm' word using break statement",
                 "I", "65,60,64,59,61,66,62", "39", "42", "39", "J", "I"
         );
-//        Q20
+//        Q26
         mydb.insert_Question(
                 "15-Continue statement ",
                 "Print 'gain' word from 'grain' ",
                 "J", "72,74,71,67,75,69,73", "42","45","39","K","I");
-//        Q31
+//        Q27
         mydb.insert_Question(
                 "16-Nested for loop",
                 "Print prime number up to your position",
                 "K","82,81,87,80,83,81,85,76,89,77,79,86,77,88,90","45","57","45","L","K");
-//        Q32
+//        Q28
         mydb.insert_Question(
                 "17-pattern ",
                 "Print below pattern.\n1111\n" +"1     1\n"+"1     1\n"+"1     1\n" +"1111",
                 "L","94,93,94,98,92,97,99,91,95,96","57","67","57","M","L");
-//        Q33
+//        Q29
         mydb.insert_Question(
                 "18-Palindrome number",
                 "Implement an algorithm for check input (number) is palindrome or not.",
                 "M","106,110,112,100,105,101,109,102,107,103,108,111","67","82","57","N","L");
-//        Q34
+//        Q30
         mydb.insert_Question(
                 "19-Sentence Capitalizing",
                 "Write a program that accepts sequence of lines as input and prints the lines after making all characters in the sentence capitalized.",
                 "N","120,127,124,129,115,119,116,123,125,121,118,128,126,122","82","87","82","S","N");
-//        Q35
+//        Q31
         mydb.insert_Question(
                 "20-OOP concepts",
                 "Consider following class.\n class Car{\n\tString color;\n\tfloat speed;\n\tvoid setColor(color);\n\tvoid setSpeed(color);\n\tvoid getSpeed();\n}\nCreate a car object and name it myCar.\nSet it's color to red.\nPrint the color of the car you created.",
                 "S","181,177,183,185,181,178,186,177,184,183,179,186,182,177,180,178,186","87","93","82","O","N");
-//        Q36
+//        Q32
         mydb.insert_Question(
                 "21-Bubble sort",
                 "Implement the bubble sort algorithm",
