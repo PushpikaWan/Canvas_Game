@@ -6,6 +6,7 @@ import android.graphics.BitmapFactory;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
+import android.media.MediaActionSound;
 import android.util.Log;
 import android.view.View;
 
@@ -27,8 +28,8 @@ public class board_layout extends View {
         super(context);
 
         //setBackgroundResource(R.drawable.boardnew);
-        x_dir = 50;
-        y_dir = 50;
+        x_dir = 10;
+        y_dir = 10;
     }
 
     @Override
@@ -50,97 +51,102 @@ public class board_layout extends View {
         black_circle = BitmapFactory.decodeResource(getResources(), R.drawable.blackcircle);
 
 
-        if (AnimationActivity.position_height==0 && AnimationActivity.position_width==0){ //if variable doesn't initalize
+        if (MainActivity.position_height==0 && MainActivity.position_width==0){ //if variable doesn't initalize
             int numbers[] ={0,1,2,3,4,5,6,7,8,9};
             int x,y;
-            y=10 -(int) Math.ceil(AnimationActivity.current_pos/10.00);
+            y=10 -(int) Math.ceil(MainActivity.current_pos/10.00);
             if(y%2!=0){ //10,30,50...
-                x=(AnimationActivity.current_pos%10)-1;
+                x=(MainActivity.current_pos%10)-1;
             }
             else{
-                x=10 -(AnimationActivity.current_pos%10);
+                x= 10 -(MainActivity.current_pos%10);
             }
             Log.v("happened x and y",String.valueOf(x)+" and "+ String.valueOf(y));
-            AnimationActivity.position_height = (int) Math.ceil((canvas.getHeight()/10*y+(canvas.getHeight()/50)));   //
-            AnimationActivity.position_width = (int) Math.ceil((canvas.getWidth())/10*x+(canvas.getWidth()/100)); //width ok
+            MainActivity.position_height = (int) Math.ceil((canvas.getHeight()/10*y+(canvas.getHeight()/50)));   //
+            MainActivity.position_width = (int) Math.ceil((canvas.getWidth())/10*x+(canvas.getWidth()/100)); //width ok
         }
 
         //create transition sequence
-        if(AnimationActivity.is_increment==1) {
+        if(MainActivity.is_increment==1) {
             //when increment
-            Log.v("happened increment",String.valueOf(AnimationActivity.target_pos));
+            Log.v("happened increment",String.valueOf(MainActivity.target_pos));
             int i = 0;
-            while (AnimationActivity.current_pos + 1 <= AnimationActivity.target_pos) {
-                if ((AnimationActivity.current_pos) % 10 != 0) {
-                    if ((int) Math.floor(AnimationActivity.current_pos / 10) % 2 == 0) { //move forward
+            while (MainActivity.current_pos + 1 <= MainActivity.target_pos) {
+                if ((MainActivity.current_pos) % 10 != 0) {
+                    Log.v("current pos is : ",String.valueOf(MainActivity.current_pos));
+                    if ((int) Math.floor(MainActivity.current_pos / 10) % 2 == 0) { //move forward
                         move_forward += 1;
                         transition_sequence[i] = "F";
                         Log.v("happened move",  "1 forward");
-                    } else { //move backward
+                    } else if(MainActivity.current_pos!=MainActivity.target_pos) { //move backward
                         move_backword += 1;
                         transition_sequence[i] = "B";
                         Log.v("happened move",  "1 backward");
                     }
-                } else { //move upward
+                } else if(MainActivity.current_pos!= MainActivity.target_pos) { //move upward
                     move_upward += 1;
                     transition_sequence[i] = "U";
                     Log.v("happened move",  "1 upward");
                 }
-                AnimationActivity.current_pos += 1;
+                MainActivity.current_pos += 1;
                 i++;
             }
         }
-        else if(AnimationActivity.is_increment==0) {
-            Log.v("happened decrement",String.valueOf(AnimationActivity.target_pos));
+        else if(MainActivity.is_increment==0) {
+            Log.v("happened decrement",String.valueOf(MainActivity.target_pos));
             //when decrement
             int j = 0;
-            while (AnimationActivity.current_pos - 1 >= AnimationActivity.target_pos) {
-                if ((AnimationActivity.current_pos - 1) % 10 != 0) {
-                    if ((int) Math.floor((AnimationActivity.current_pos-1)/ 10) % 2 != 0) { //move forward
+            while (MainActivity.current_pos > MainActivity.target_pos) {
+                if ((MainActivity.current_pos - 1) % 10 != 0) {
+                    if ((int) Math.floor((MainActivity.current_pos-1)/ 10) % 2 != 0) { //move forward
                         move_forward += 1;
                         transition_sequence[j] = "F";
                         Log.v("happened move",  "1 forward");
-                    } else { //move backward
+                    } else if(MainActivity.current_pos!=MainActivity.target_pos){ //move backward
                         move_backword += 1;
                         transition_sequence[j] = "B";
                         Log.v("happened move",  "1 backward");
+                        Log.v("happened cur",  "1 backward"+MainActivity.current_pos);
+                        Log.v("happened tar",  "1 backward"+MainActivity.target_pos);
                     }
-                } else { //move upward
+                } else if(MainActivity.current_pos!=MainActivity.target_pos) { //move upward
                     move_downward += 1;
                     transition_sequence[j] = "D";
                     Log.v("happened move",  "1 downward");
+                    Log.v("happened cur",  "1 downward"+MainActivity.current_pos);
+                    Log.v("happened tar",  "1 downward"+MainActivity.target_pos);
                 }
-                AnimationActivity.current_pos -= 1;
+                MainActivity.current_pos -= 1;
                 j++;
             }
         }
 
-        //canvas.drawBitmap(black_circle,AnimationActivity.position_width,AnimationActivity.position_height, null);
+        //canvas.drawBitmap(black_circle,MainActivity.position_width,MainActivity.position_height, null);
 
         //up _code
         if (transition_sequence[move].equals("U")) {
-            AnimationActivity.position_height = AnimationActivity.position_height - (int) Math.ceil((canvas.getHeight() / 10 * 1));   //
+            MainActivity.position_height = MainActivity.position_height - (int) Math.ceil((canvas.getHeight() / 10 * 1));   //
         }
 
         // down _code
         else if (transition_sequence[move].equals("D")) {
-            AnimationActivity.position_height = AnimationActivity.position_height + (int) Math.ceil((canvas.getHeight() / 10 * 1));   //
+            MainActivity.position_height = MainActivity.position_height + (int) Math.ceil((canvas.getHeight() / 10 * 1));   //
         }
 
         // move_forward _code
         else if (transition_sequence[move].equals("F")) {
-            AnimationActivity.position_width = AnimationActivity.position_width + (int) Math.ceil((canvas.getWidth()) / 10 * 1);
+            MainActivity.position_width = MainActivity.position_width + (int) Math.ceil((canvas.getWidth()) / 10 * 1);
         }
 
         //move_backward _code
         else if (transition_sequence[move].equals("B")) {
-            AnimationActivity.position_width = AnimationActivity.position_width - (int) Math.ceil((canvas.getWidth()) / 10 * 1);
+            MainActivity.position_width = MainActivity.position_width - (int) Math.ceil((canvas.getWidth()) / 10 * 1);
         }
 
-        canvas.drawBitmap(black_circle, AnimationActivity.position_width, AnimationActivity.position_height, null);
+        canvas.drawBitmap(black_circle, MainActivity.position_width, MainActivity.position_height, null);
 
         move=move+1;
-        AnimationActivity.is_increment=-1; //loop closed
+        MainActivity.is_increment=-1; //loop closed
         if(!transition_sequence[move].equals("N")){
             try {
                 Thread.sleep(500);

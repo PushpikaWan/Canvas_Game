@@ -3,6 +3,7 @@ package com.example.pushpika.canvas_game;
 import android.app.AlertDialog;
 import android.app.Dialog;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.database.Cursor;
 import android.graphics.Color;
 import android.support.v7.app.AppCompatActivity;
@@ -23,10 +24,10 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 
-public class Question_view extends AppCompatActivity {
+public class Question_view extends Activity {
     DatabaseHelper mydb;
     LinearLayout compulsary_words_field,optional_words_field;
-    TextView textView;
+    TextView textView,pos_view;
     String cur_text="",quest_topic="",quest_desc="",cur_seq="",answer_get="",start_node="",promotion_node="",punishment_node="",promotion_class="",punishment_class="";
     String text="",id="";
     String text_arr [] = new String [100];
@@ -35,13 +36,17 @@ public class Question_view extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_question_view);
 
+
+
+        setContentView(R.layout.activity_question_view);
+        pos_view = (TextView) findViewById(R.id.position_number);
         compulsary_words_field = (LinearLayout) findViewById(R.id.compulsary_words);
         optional_words_field = (LinearLayout) findViewById(R.id.optional_words);
         textView = (TextView) findViewById(R.id.text1);
         dynamic_content();
         show_message(quest_topic,quest_desc);
+
     }
 
     public void dynamic_content(){
@@ -52,7 +57,7 @@ public class Question_view extends AppCompatActivity {
         LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(
                 LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT);
 
-        final Question_object question_object = mydb.get_data_object(AnimationActivity.target_class); // we can change class according to question
+        final Question_object question_object = mydb.get_data_object(MainActivity.target_class); // we can change class according to question
 
         quest_topic=question_object.question_topic;
         quest_desc = question_object.question_desc;
@@ -146,6 +151,9 @@ public class Question_view extends AppCompatActivity {
             //Add button to LinearLayout defined in XML
             optional_words_field.addView(ll1);
         }
+        //add position
+        //String pos = (String) pos_view.getText();
+        pos_view.setText("Position - "+start_node);
 
     }
     public void add_tag(String tag, String tag_id){
@@ -215,6 +223,9 @@ public class Question_view extends AppCompatActivity {
             increment_board();
 
         }
+        else if(cur_seq.equals("")){
+            //input field is empty
+        }
         else{
             //return false
             Dialog settingsDialog = new Dialog(this);
@@ -227,16 +238,17 @@ public class Question_view extends AppCompatActivity {
         }
     }
 
+
     public void increment_board(){
         //Intent transition_page = new Intent(this,Question_view.class);
         Intent transition_page = new Intent(this,AnimationActivity.class);
-        AnimationActivity.current_pos=Integer.parseInt(start_node);
-        AnimationActivity.is_increment = 1;
-        AnimationActivity.target_pos = Integer.parseInt(promotion_node);
-        AnimationActivity.target_class = promotion_class;
-        Log.i("TAG", "current pos-- "+ AnimationActivity.current_pos);
-        Log.i("TAG", "target pos"+ AnimationActivity.target_pos);
-        Log.i("TAG", "Target class "+ AnimationActivity.target_class);
+        MainActivity.current_pos=Integer.parseInt(start_node);
+        MainActivity.is_increment = 1;
+        MainActivity.target_pos = Integer.parseInt(promotion_node);
+        MainActivity.target_class = promotion_class;
+        Log.i("TAG", "current pos-- "+ MainActivity.current_pos);
+        Log.i("TAG", "target pos"+ MainActivity.target_pos);
+        Log.i("TAG", "Target class "+ MainActivity.target_class);
         startActivity(transition_page);
         finish();
 
@@ -244,13 +256,13 @@ public class Question_view extends AppCompatActivity {
 
     public void decrement_board(){
         Intent transition_page = new Intent(this,AnimationActivity.class);
-        AnimationActivity.current_pos=Integer.parseInt(start_node);
-        AnimationActivity.is_increment = 0;
-        AnimationActivity.target_pos = Integer.parseInt(punishment_node);
-        AnimationActivity.target_class = punishment_class;
-        Log.i("TAG", "current pos-- "+ AnimationActivity.current_pos);
-        Log.i("TAG", "target pos"+ AnimationActivity.target_pos);
-        Log.i("TAG", "Target class "+ AnimationActivity.target_class);
+        MainActivity.current_pos=Integer.parseInt(start_node);
+        MainActivity.is_increment = 0;
+        MainActivity.target_pos = Integer.parseInt(punishment_node);
+        MainActivity.target_class = punishment_class;
+        Log.i("TAG", "current pos-- "+ MainActivity.current_pos);
+        Log.i("TAG", "target pos"+ MainActivity.target_pos);
+        Log.i("TAG", "Target class "+ MainActivity.target_class);
         startActivity(transition_page);
         finish();
     }

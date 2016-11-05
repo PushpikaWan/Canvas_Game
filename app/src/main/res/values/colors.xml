@@ -10,4 +10,6 @@
     <color name="colorDanger">#f62121</color>
     <color name="colorSuccess">#30cf2d</color>
     <color name="colorBtnText">#ffffff</color>
+    <color name="colorDark">#303030</color>
+    <color name="transparent">#00000000</color>
 </resources>
