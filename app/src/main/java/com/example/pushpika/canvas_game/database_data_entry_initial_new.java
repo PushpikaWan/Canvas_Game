@@ -392,17 +392,20 @@ public class database_data_entry_initial_new extends Activity {
         mydb.insert_tag_que_assist(31,271);
         mydb.insert_tag_que_assist(31,272);
         mydb.insert_tag_que_assist(31,273);
+        mydb.insert_tag_que_assist(31,274);
+        mydb.insert_tag_que_assist(31,275);
+        mydb.insert_tag_que_assist(31,276);
 
         //AF
-        mydb.insert_tag_que_assist(32,274);
-        mydb.insert_tag_que_assist(32,275);
-        mydb.insert_tag_que_assist(32,276);
         mydb.insert_tag_que_assist(32,277);
         mydb.insert_tag_que_assist(32,278);
         mydb.insert_tag_que_assist(32,279);
         mydb.insert_tag_que_assist(32,280);
         mydb.insert_tag_que_assist(32,281);
-
+        mydb.insert_tag_que_assist(32,282);
+        mydb.insert_tag_que_assist(32,283);
+        mydb.insert_tag_que_assist(32,284);
+        mydb.insert_tag_que_assist(32,285);
 
 
 
@@ -413,12 +416,6 @@ public class database_data_entry_initial_new extends Activity {
 
 
     public void insertData_Question() {
-
-        //(String question_topic,String question_desc,
-        // String question_class,String answer_sequence,
-        // String start_node,String promotion_node, String punishment_node,
-        // String promotion_class, String punishment_class
-
         //meewa tika gahanna witarai tiyenne parana prashna walath promotion node , punishment node promotion class punshiment
         // class  and statring node tika wenas karahan dena lakunu anuwa
 //new questions added.
@@ -426,78 +423,82 @@ public class database_data_entry_initial_new extends Activity {
         mydb.insert_Question(
                 "1-Goto function",
                 "Using GOTO function increase your position to 9.",
-                "v","208,210","1","9","1","w","v"
+                "V","208,210","1","9","1","W","V"
         );
 
 //      Q2
         mydb.insert_Question(
                 "2-Goto function",
                 "Increase your score by one position.",
-                "w","211,212","9","10","9","x","w"
+                "W","211,212","9","10","9","X","W"
         );
 
 //      Q3
         mydb.insert_Question(
                 "3-Operators",
                 "Increase your current position by 2.",
-                "x","213,214,219","10","12","9","y","w"
+                "X","213,214,219","10","12","9","Y","W"
         );
 
-//      Q4
+//      Q4-y
         mydb.insert_Question(
                 "4-Variables",
                 "Using predefined variable(s) increase your current position by 2.",
-                "y","222,220,227,220,225,228","12","14","12","z","y"
+                "Y","222,220,227,220,225,228","12","14","12","Z","Y"
         );
 
-//      Q5
+//      Q5-z
         mydb.insert_Question(
                 "5-Variables",
-                "Using Increment operator , increase your position by 1.",
-                "z","229,235","14","15","14","AA","z"
+                "Using Increment operator, increase your position by 1.",
+                "Z","229,235","14","15","14","AA","Z"
         );
 
-//      Q6
+//      Q6 -AA
         mydb.insert_Question(
                 "6-Variables",
-                "Using Increment operator , increase your position by 1.",
-                "z","229,235","14","15","14","AA","z"
-        );
-
-
-//      Q7 //ps : change question
-        mydb.insert_Question(
-                "7-Variables",
                 "Goto next position(16) and come back to 15.(3 marks)",
                 "AA","237,236,243,236,244,211,212","15","18","15","AB","AA"
         );
 
-//      Q8
+//      Q7 - AB
         mydb.insert_Question(
-                "8-For loop",
+                "7-For loop",
                 "Using for loop increase your position by 2",
                 "AB","246,252,249,250,251,245","18","20","18","AC","AB"
         );
 
-//      Q9
+//      Q8 - AC
         mydb.insert_Question(
-                "9-Arrays",
+                "8-Arrays",
                 "Using array indexing ",
                 "AC","254,257,258,260","20","23","20","AD","AC"
         );
 
-//      Q10
+//      Q9 - AD
         mydb.insert_Question(
-                "10-Variables",
+                "9-Variables",
                 "Using given global variables increment your position to 25.",
                 "AD","261,264,266","23","25","23","AE","AD"
         );
 
-//      Q11
+        // String question_topic,String question_desc,
+        // String question_class,String answer_sequence,
+        // String start_node,String promotion_node, String punishment_node,
+        // String promotion_class, String punishment_class
+
+//      Q10 - AE
+        mydb.insert_Question(
+                "10-Variables",
+                "By changing variables increase your position to 28.",
+                "AE","269,271,274,268,274,273,276,267,268,267,272,274","25","28","25","AF","AE"
+        );
+
+//      Q11 - AF
         mydb.insert_Question(
                 "11-Variables",
-                "",
-                "AE","261,264,266","23","25","23","AE","AD"
+                "Change variables and use them to change your position.",
+                "AF","281,280,284,277,278,277,283,279","28","30","28","P","AF"
         );
 
 //      Q12
@@ -840,8 +841,6 @@ public class database_data_entry_initial_new extends Activity {
 
         //139,133,138,134,141,134,140,132,136,135,130
 
-        //--------------------
-
         //question 16 class - p
 
         mydb.insert_Tag("-2;\n","VARIABLE","None");//id=142
@@ -944,7 +943,10 @@ public class database_data_entry_initial_new extends Activity {
         mydb.insert_Tag("myScore , ","MAIN","None");//id=206
         mydb.insert_Tag("add","MAIN","None");//id=207
         //201,198,197,199,204,200,207,200,206,201,202,202,199
-/*======================================================================*/
+
+
+/*==================================NEW QUESTIONS====================================*/
+
         //question 22 class - v
         mydb.insert_Tag("GOTO", "MAIN","None"); //id=208
         mydb.insert_Tag("(8)", "VARIABLE","None"); //id=209
@@ -957,7 +959,7 @@ public class database_data_entry_initial_new extends Activity {
         //answer - "211,212"
 
         //question 24 class - x
-        mydb.insert_Tag("current_position = current_position" , "MAIN","None"); //id=213
+        mydb.insert_Tag("current_position = current_position " , "MAIN","None"); //id=213
         mydb.insert_Tag( "+", "VARIABLE","None"); //id=214
         mydb.insert_Tag( "3" , "VARIABLE","None"); //id=215
         mydb.insert_Tag("GOTO", "VARIABLE","None"); //id=216
@@ -1039,22 +1041,26 @@ public class database_data_entry_initial_new extends Activity {
         mydb.insert_Tag("current_position", "MAIN","None"); //id=267
         mydb.insert_Tag("= /", "MAIN","None"); //id=268
         mydb.insert_Tag("X=5", "VARIABLE","None"); //id=269
-        mydb.insert_Tag("Y=3", "VARIABLE","None"); //id=270
+        mydb.insert_Tag("Y=6", "VARIABLE","None"); //id=270
         mydb.insert_Tag("K=2", "VARIABLE","None"); //id=271
         mydb.insert_Tag("+", "VARIABLE","None"); //id=272
         mydb.insert_Tag("-", "VARIABLE","None"); //id=273
-        //answer ????
+        mydb.insert_Tag("X", "VARIABLE","None"); //id=274
+        mydb.insert_Tag("Y ", "VARIABLE","None"); //id=275
+        mydb.insert_Tag("K", "VARIABLE","None"); //id=276
+        //answer - "269,271,274,268,274,273,276,267,268,267,272,274"
 
         //question 32 class - AF
-        mydb.insert_Tag("current_position", "MAIN","None"); //id=274
-        mydb.insert_Tag("Y+X ", "MAIN","None"); //id=275
-        mydb.insert_Tag("= /", "MAIN","None"); //id=276
-        mydb.insert_Tag("Y=2", "VARIABLE","None"); //id=277
-        mydb.insert_Tag("X=1", "VARIABLE","None"); //id=278
-        mydb.insert_Tag("K=5", "VARIABLE","None"); //id=279
-        mydb.insert_Tag("+", "VARIABLE","None"); //id=280
-        mydb.insert_Tag("Y+K", "VARIABLE","None"); //id=281
-        //answer- ""
+        mydb.insert_Tag("current_position", "MAIN","None"); //id=277
+        mydb.insert_Tag("= /", "MAIN","None");     //id=278
+        mydb.insert_Tag("(Y+X)", "MAIN","None"); //id=279
+        mydb.insert_Tag("Y=2", "VARIABLE","None"); //id=280
+        mydb.insert_Tag("X=1", "VARIABLE","None"); //id=281
+        mydb.insert_Tag("K=5", "VARIABLE","None"); //id=282
+        mydb.insert_Tag("+", "VARIABLE","None");   //id=283
+        mydb.insert_Tag("Y=X", "VARIABLE","None"); //id=284
+        mydb.insert_Tag("X=Y", "VARIABLE","None"); //id=285
+        //answer- "281,280,284,277,278,277,283,279"
     }
 
 
