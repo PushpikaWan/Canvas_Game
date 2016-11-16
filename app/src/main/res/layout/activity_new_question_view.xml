@@ -162,14 +162,40 @@
                             android:layout_height="match_parent"
                             android:layout_weight="1"
                             android:id="@+id/posBtnArea">
-                            <TextView
+                            <LinearLayout
+                                android:orientation="horizontal"
                                 android:layout_width="match_parent"
                                 android:layout_height="match_parent"
-                                android:id="@+id/position_number"
-                                android:textAlignment="center"
-                                android:textStyle="bold"
-                                android:gravity="center_vertical"
-                                android:textSize="24sp" />
+                                android:layout_weight="1"
+                                android:id="@+id/quesBtnArea2">
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:id="@+id/cur_position_number"
+                                    android:textAlignment="center"
+                                    android:text="Now - 21"
+                                    android:textStyle="bold"
+                                    android:gravity="center_vertical"
+                                    android:textSize="20sp" />
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:orientation="horizontal"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:id="@+id/quesBtnAreanext">
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:id="@+id/next_position_number"
+                                    android:textAlignment="center"
+                                    android:textStyle="bold"
+                                    android:text="Next - 26"
+                                    android:gravity="center_vertical"
+                                    android:textSize="20sp" />
+                            </LinearLayout>
+
 
                         </LinearLayout>
 
