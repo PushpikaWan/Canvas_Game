@@ -1,23 +1,14 @@
 package com.example.pushpika.canvas_game;
 
 import android.app.Activity;
-import android.app.AlertDialog;
 import android.content.Intent;
-import android.database.Cursor;
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
-import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.Button;
-import android.widget.Toast;
 
-import java.nio.channels.NonReadableChannelException;
-
-public class database_data_entry_initial extends Activity {
+public class database_data_entry_initial_new extends Activity {
 
     DatabaseHelper mydb;
     Button btn;
@@ -56,6 +47,9 @@ public class database_data_entry_initial extends Activity {
     }
 
     public void insertData_tag_ques_assist() {
+
+
+
         //P
         mydb.insert_tag_que_assist(1,142);
         mydb.insert_tag_que_assist(1,143);
@@ -309,8 +303,109 @@ public class database_data_entry_initial extends Activity {
         mydb.insert_tag_que_assist(20,185);
         mydb.insert_tag_que_assist(20,186);
 
+        //v
+        mydb.insert_tag_que_assist(22,208);
+        mydb.insert_tag_que_assist(22,209);
+        mydb.insert_tag_que_assist(22,210);
+
+        //w
+        mydb.insert_tag_que_assist(23,211);
+        mydb.insert_tag_que_assist(23,212);
+
+        //x
+        mydb.insert_tag_que_assist(24,213);
+        mydb.insert_tag_que_assist(24,214);
+        mydb.insert_tag_que_assist(24,215);
+        mydb.insert_tag_que_assist(24,216);
+        mydb.insert_tag_que_assist(24,217);
+        mydb.insert_tag_que_assist(24,218);
+        mydb.insert_tag_que_assist(24,219);
+
+        //y
+        mydb.insert_tag_que_assist(25,220);
+        mydb.insert_tag_que_assist(25,221);
+        mydb.insert_tag_que_assist(25,222);
+        mydb.insert_tag_que_assist(25,223);
+        mydb.insert_tag_que_assist(25,224);
+        mydb.insert_tag_que_assist(25,225);
+        mydb.insert_tag_que_assist(25,226);
+        mydb.insert_tag_que_assist(25,227);
+        mydb.insert_tag_que_assist(25,228);
 
 
+        //z
+        mydb.insert_tag_que_assist(26,229);
+        mydb.insert_tag_que_assist(26,230);
+        mydb.insert_tag_que_assist(26,231);
+        mydb.insert_tag_que_assist(26,232);
+        mydb.insert_tag_que_assist(26,233);
+        mydb.insert_tag_que_assist(26,234);
+        mydb.insert_tag_que_assist(26,235);
+
+        //AA
+        mydb.insert_tag_que_assist(27,236);
+        mydb.insert_tag_que_assist(27,237);
+        mydb.insert_tag_que_assist(27,238);
+        mydb.insert_tag_que_assist(27,239);
+        mydb.insert_tag_que_assist(27,240);
+        mydb.insert_tag_que_assist(27,241);
+        mydb.insert_tag_que_assist(27,242);
+        mydb.insert_tag_que_assist(27,243);
+        mydb.insert_tag_que_assist(27,244);
+        //from other problem
+        mydb.insert_tag_que_assist(23,211);
+        mydb.insert_tag_que_assist(23,212);
+
+        //AB
+        mydb.insert_tag_que_assist(28,245);
+        mydb.insert_tag_que_assist(28,246);
+        mydb.insert_tag_que_assist(28,247);
+        mydb.insert_tag_que_assist(28,248);
+        mydb.insert_tag_que_assist(28,249);
+        mydb.insert_tag_que_assist(28,250);
+        mydb.insert_tag_que_assist(28,251);
+        mydb.insert_tag_que_assist(28,252);
+        mydb.insert_tag_que_assist(28,253);
+
+        //AC
+        mydb.insert_tag_que_assist(29,254);
+        mydb.insert_tag_que_assist(29,255);
+        mydb.insert_tag_que_assist(29,256);
+        mydb.insert_tag_que_assist(29,257);
+        mydb.insert_tag_que_assist(29,258);
+        mydb.insert_tag_que_assist(29,259);
+        mydb.insert_tag_que_assist(29,260);
+
+        //AD
+        mydb.insert_tag_que_assist(30,261);
+        mydb.insert_tag_que_assist(30,262);
+        mydb.insert_tag_que_assist(30,263);
+        mydb.insert_tag_que_assist(30,264);
+        mydb.insert_tag_que_assist(30,265);
+        mydb.insert_tag_que_assist(30,266);
+
+        //AE
+        mydb.insert_tag_que_assist(31,267);
+        mydb.insert_tag_que_assist(31,268);
+        mydb.insert_tag_que_assist(31,269);
+        mydb.insert_tag_que_assist(31,270);
+        mydb.insert_tag_que_assist(31,271);
+        mydb.insert_tag_que_assist(31,272);
+        mydb.insert_tag_que_assist(31,273);
+        mydb.insert_tag_que_assist(31,274);
+        mydb.insert_tag_que_assist(31,275);
+        mydb.insert_tag_que_assist(31,276);
+
+        //AF
+        mydb.insert_tag_que_assist(32,277);
+        mydb.insert_tag_que_assist(32,278);
+        mydb.insert_tag_que_assist(32,279);
+        mydb.insert_tag_que_assist(32,280);
+        mydb.insert_tag_que_assist(32,281);
+        mydb.insert_tag_que_assist(32,282);
+        mydb.insert_tag_que_assist(32,283);
+        mydb.insert_tag_que_assist(32,284);
+        mydb.insert_tag_que_assist(32,285);
 
 
 
@@ -321,121 +416,204 @@ public class database_data_entry_initial extends Activity {
 
 
     public void insertData_Question() {
-        //(String question_topic,String question_desc,
-        // String question_class,String answer_sequence,String start_node,String promotion_node, String punishment_node, String promotion_class, String punishment_class){
-//        Q1
+        //meewa tika gahanna witarai tiyenne parana prashna walath promotion node , punishment node promotion class punshiment
+        // class  and statring node tika wenas karahan dena lakunu anuwa
+//new questions added.
+//      Q1
+        mydb.insert_Question(
+                "1-Goto function",
+                "Using GOTO function increase your position to 9.",
+                "V","208,210","1","9","1","W","V"
+        );
+
+//      Q2
+        mydb.insert_Question(
+                "2-Goto function",
+                "Increase your score by one position.",
+                "W","211,212","9","10","9","X","W"
+        );
+
+//      Q3
+        mydb.insert_Question(
+                "3-Operators",
+                "Increase your current position by 2.",
+                "X","213,214,219","10","12","9","Y","W"
+        );
+
+//      Q4-y
+        mydb.insert_Question(
+                "4-Variables",
+                "Using predefined variable(s) increase your current position by 2.",
+                "Y","222,220,227,220,225,228","12","14","12","Z","Y"
+        );
+
+//      Q5-z
+        mydb.insert_Question(
+                "5-Variables",
+                "Using Increment operator, increase your position by 1.",
+                "Z","229,235","14","15","14","AA","Z"
+        );
+
+//      Q6 -AA
+        mydb.insert_Question(
+                "6-Variables",
+                "Goto next position(16) and come back to 15.(3 marks)",
+                "AA","237,236,243,236,244,211,212","15","18","15","AB","AA"
+        );
+
+//      Q7 - AB
+        mydb.insert_Question(
+                "7-For loop",
+                "Using for loop increase your position by 2",
+                "AB","246,252,249,250,251,245","18","20","18","AC","AB"
+        );
+
+//      Q8 - AC
+        mydb.insert_Question(
+                "8-Arrays",
+                "Using array indexing ",
+                "AC","254,257,258,260","20","23","20","AD","AC"
+        );
+
+//      Q9 - AD
+        mydb.insert_Question(
+                "9-Variables",
+                "Using given global variables increment your position to 25.",
+                "AD","261,264,266","23","25","23","AE","AD"
+        );
+
+        // String question_topic,String question_desc,
+        // String question_class,String answer_sequence,
+        // String start_node,String promotion_node, String punishment_node,
+        // String promotion_class, String punishment_class
+
+//      Q10 - AE
+        mydb.insert_Question(
+                "10-Variables",
+                "By changing variables increase your position to 28.",
+                "AE","269,271,274,268,274,273,276,267,268,267,272,274","25","28","25","AF","AE"
+        );
+
+//      Q11 - AF
+        mydb.insert_Question(
+                "11-Variables",
+                "Change variables and use them to change your position.",
+                "AF","281,280,284,277,278,277,283,279","28","30","28","P","AF"
+        );
+
+//      Q12
         mydb.insert_Question(
                 "1-Increase value",
                 "Increase your score by 2 only using myScore variable and + operator.Then print it",
                 "P","145,147,145,144,143,145,146","1","3","1","A","P"
         );
-//        Q2
+//      Q13
         mydb.insert_Question(
                 "2-Swap ",
                 "SWAP two values , x=10 and y=20 using temp variable",
                 "A","5,2,1,3,4","3","5","3","T", "A"
         );
-//        Q3
+//      Q14
         mydb.insert_Question(
                 "3-Pass by value",
                 "Using divide function, increase your score to 6.",
                 "T","189,193,191,193,196,187,195,192,192,194","5","6","5","U","T"
         );
-//        Q4
+//        Q15
         mydb.insert_Question(
                 "4-Pass by reference",
                 "Using add function, increase your score to 7.\n function add(a,b){\n\treturn a+b;\n}\n You can use myScore parameter without declaring.\nSet your score to n using setMyScore(n).",
                 "U","201,198,197,199,204,200,207,200,206,201,202,202,199","6","7","5","Q","T"
         );
-//        Q5
+//        Q16
         mydb.insert_Question(
                 "5-Modular problem",
                 "Write a function to return modular value and run it on main function to increase your score by 3 and print it\n * You should find a suitable divisor for this",
                 "Q","153,152,157,160,150,157,148,155,153,159,156,154,152,149,151,158,156,151","7","10","5","R","T");
-//        Q6
+//        Q17
         mydb.insert_Question(
                 "6-Recursive function",
                 "Write a recursive program to implement power function which returns a^b when pass parameters as a and b.",
                 "R","164,171,175,165,170,174,165,161,176,163,169,165,161,167,171,168,163","10","12","7","B","Q");
-//        Q7
+//        Q18
         mydb.insert_Question(
                 "7-If-Else and isPrime() ",
                 "Check whether your score is prime or not",
                 "B", "10,9,8,6,7", "12", "14", "12", "C", "B"
         );
-//        Q8
+//        Q19
         mydb.insert_Question(
                 "8-If-Elseif-else ",
                 "Use if-elseif and else conditions to put numbers into the correct categories.",
                 "C", "10,16,15,11,14,12,6,13", "14", "17", "12", "D", "B"
         );
-//        Q9
+//        Q20
         mydb.insert_Question(
                 "9-Switch ",
                 "Print month name when month number entered,if that month number is less than 4,print month name as an output",
                 "D", "20,18,23,19,17,22,25,17,24,26,17,21,17", "17", "22", "14", "E", "C"
         );
-//        Q10
+//        Q21
         mydb.insert_Question(
                 "10-for loop ",
                 "Print even numbers up to your score using for loop",
                 "E", "30,34,27,29,33,28,32", "22", "25", "22", "F", "E"
         );
-//        Q11
+//        Q22
         mydb.insert_Question(
                 "11-for-each ",
                 "Get the sum of this array using for-each loop",
                 "F", "41,39,35,43,37", "25", "31", "22", "G", "E"
         );
-//        Q12
+//        Q23
         mydb.insert_Question(
                 "12-do-while ",
                 "Print numbers 10 to 0 using do while loop",
                 "G", "47,48,44,46,45,52", "31", "35", "31", "H", "G"
         );
-//        Q13
+//        Q24
         mydb.insert_Question(
                 "13-while-do ",
                 "Print Fibonacci Series using while loop until your score",
                 "H", "58,53,56,54,57,55", "35", "39", "31", "I", "G"
         );
-//        Q14
+//        Q25
         mydb.insert_Question(
                 "14-Break statement ",
                 "Print the 'Algo' word fragment from 'Algorithm' word using break statement",
                 "I", "65,60,64,59,61,66,62", "39", "42", "39", "J", "I"
         );
-//        Q15
+//        Q26
         mydb.insert_Question(
                 "15-Continue statement ",
                 "Print 'gain' word from 'grain' ",
                 "J", "72,74,71,67,75,69,73", "42","45","39","K","I");
-//        Q16
+//        Q27
         mydb.insert_Question(
                 "16-Nested for loop",
                 "Print prime number up to your position",
                 "K","82,81,87,80,83,81,85,76,89,77,79,86,77,88,90","45","57","45","L","K");
-//        Q17
+//        Q28
         mydb.insert_Question(
                 "17-pattern ",
                 "Print below pattern.\n1111\n" +"1     1\n"+"1     1\n"+"1     1\n" +"1111",
                 "L","94,93,94,98,92,97,99,91,95,96","57","67","57","M","L");
-//        Q18
+//        Q29
         mydb.insert_Question(
                 "18-Palindrome number",
                 "Implement an algorithm for check input (number) is palindrome or not.",
                 "M","106,110,112,100,105,101,109,102,107,103,108,111","67","82","57","N","L");
-//        Q19
+//        Q30
         mydb.insert_Question(
                 "19-Sentence Capitalizing",
                 "Write a program that accepts sequence of lines as input and prints the lines after making all characters in the sentence capitalized.",
                 "N","120,127,124,129,115,119,116,123,125,121,118,128,126,122","82","87","82","S","N");
-//        Q20
+//        Q31
         mydb.insert_Question(
                 "20-OOP concepts",
                 "Consider following class.\n class Car{\n\tString color;\n\tfloat speed;\n\tvoid setColor(color);\n\tvoid setSpeed(color);\n\tvoid getSpeed();\n}\nCreate a car object and name it myCar.\nSet it's color to red.\nPrint the color of the car you created.",
                 "S","181,177,183,185,181,178,186,177,184,183,179,186,182,177,180,178,186","87","93","82","O","N");
-//        Q21
+//        Q32
         mydb.insert_Question(
                 "21-Bubble sort",
                 "Implement the bubble sort algorithm",
@@ -663,8 +841,6 @@ public class database_data_entry_initial extends Activity {
 
         //139,133,138,134,141,134,140,132,136,135,130
 
-        //--------------------
-
         //question 16 class - p
 
         mydb.insert_Tag("-2;\n","VARIABLE","None");//id=142
@@ -766,14 +942,126 @@ public class database_data_entry_initial extends Activity {
         mydb.insert_Tag(">","VARIABLE","None");//id=205
         mydb.insert_Tag("myScore , ","MAIN","None");//id=206
         mydb.insert_Tag("add","MAIN","None");//id=207
-
-
-
-
         //201,198,197,199,204,200,207,200,206,201,202,202,199
 
-        //question 22 class - V
 
+/*==================================NEW QUESTIONS====================================*/
+
+        //question 22 class - v
+        mydb.insert_Tag("GOTO", "MAIN","None"); //id=208
+        mydb.insert_Tag("(8)", "VARIABLE","None"); //id=209
+        mydb.insert_Tag("(9)", "VARIABLE","None"); //id=210
+        //answer - "208,210"
+
+        //question 23 class - w
+        mydb.insert_Tag("GOTO", "MAIN","None"); //id=211
+        mydb.insert_Tag("(1_step_forward);", "VARIABLE","None"); //id=212
+        //answer - "211,212"
+
+        //question 24 class - x
+        mydb.insert_Tag("current_position = current_position " , "MAIN","None"); //id=213
+        mydb.insert_Tag( "+", "VARIABLE","None"); //id=214
+        mydb.insert_Tag( "3" , "VARIABLE","None"); //id=215
+        mydb.insert_Tag("GOTO", "VARIABLE","None"); //id=216
+        mydb.insert_Tag( "12" , "VARIABLE","None"); //id=217
+        mydb.insert_Tag( "5" , "VARIABLE","None"); //id=218
+        mydb.insert_Tag("2" , "VARIABLE","None"); //id=219
+        //answer - "213,214,219"
+
+        //question 25 class - y
+        mydb.insert_Tag("current_position" , "MAIN","None"); //id=220
+        mydb.insert_Tag("var1=1;", "MAIN","None"); //id=221
+        mydb.insert_Tag("var2=2;", "MAIN","None"); //id=222
+        mydb.insert_Tag("var3=3;", "MAIN","None"); //id=223
+        mydb.insert_Tag("-", "VARIABLE","None"); //id=224
+        mydb.insert_Tag("+", "VARIABLE","None"); //id=225
+        mydb.insert_Tag("var3", "VARIABLE","None"); //id=226
+        mydb.insert_Tag("=", "VARIABLE","None"); //id=227
+        mydb.insert_Tag("var2", "VARIABLE","None"); //id=228
+        //answer ????
+
+        //question 26 class - z
+        mydb.insert_Tag("current_position" , "MAIN","None"); //id=229
+        mydb.insert_Tag("--", "VARIABLE","None"); //id=230
+        mydb.insert_Tag("*", "VARIABLE","None"); //id=231
+        mydb.insert_Tag("var1", "VARIABLE","None"); //id=232
+        mydb.insert_Tag("#", "VARIABLE","None"); //id=233
+        mydb.insert_Tag("-", "VARIABLE","None"); //id=234
+        mydb.insert_Tag("++", "VARIABLE","None"); //id=235
+        //answer - "229,235"
+
+        //question 27 class - AA
+        mydb.insert_Tag("current_position" , "MAIN","None"); //id=236
+        mydb.insert_Tag("var1=1;", "MAIN","None"); //id=237
+        mydb.insert_Tag("var2=2;", "MAIN","None"); //id=238
+        mydb.insert_Tag("var3=3;", "MAIN","None"); //id=239
+        mydb.insert_Tag("-", "VARIABLE","None"); //id=240
+        mydb.insert_Tag("+", "VARIABLE","None"); //id=241
+        mydb.insert_Tag("var3", "VARIABLE","None"); //id=242
+        mydb.insert_Tag("=", "VARIABLE","None"); //id=243
+        mydb.insert_Tag("var1", "VARIABLE","None"); //id=244
+        /*
+        mydb.insert_Tag("GOTO", "MAIN","None"); //id=211
+        mydb.insert_Tag("(1_step_forward);", "VARIABLE","None"); //id=212
+        */
+        //answer  ??????
+
+        //question 28 class - AB
+        mydb.insert_Tag("(1_setp_forward)", "MAIN","None"); //id=245
+        mydb.insert_Tag("for (", "MAIN","None"); //id=246
+        mydb.insert_Tag("foreach (", "MAIN","None"); //id=247
+        mydb.insert_Tag("i=1;", "VARIABLE","None"); //id=248
+        mydb.insert_Tag("i<=2;", "VARIABLE","None"); //id=249
+        mydb.insert_Tag("i++)\n", "VARIABLE","None"); //id=250
+        mydb.insert_Tag("\tGoto", "VARIABLE","None"); //id=251
+        mydb.insert_Tag("i=0;", "VARIABLE","None"); //id=252
+        mydb.insert_Tag("var2", "VARIABLE","None"); //id=253
+        //answer - "246,252,249,250,251,245"
+
+        //question 29 class - AC
+        mydb.insert_Tag("current_position", "MAIN","None"); //id=47 254
+        mydb.insert_Tag("array = [1,2,3,5,20,23,25]", "MAIN","None"); //id=48 255
+        mydb.insert_Tag("+", "VARIABLE","None"); //id=49 256
+        mydb.insert_Tag("=", "VARIABLE","None"); //id=50 257
+        mydb.insert_Tag("array", "VARIABLE","None"); //id=51 258
+        mydb.insert_Tag("[6]", "VARIABLE","None"); //id=52 259
+        mydb.insert_Tag("[5]", "VARIABLE","None"); //id=53 260
+        //answer - "254,257,258,260"
+
+        //question 30 class - AD
+        mydb.insert_Tag("current_position", "MAIN","None"); //id=261
+        mydb.insert_Tag("global var = 2/", "MAIN","None"); //id=262
+        mydb.insert_Tag("+", "VARIABLE","None"); //id=263
+        mydb.insert_Tag("+=", "VARIABLE","None"); //id=264
+        mydb.insert_Tag("gobal var", "VARIABLE","None"); //id=265
+        mydb.insert_Tag("var", "VARIABLE","None"); //id=266
+        //answer - "261,264,266"
+
+        //question 31 class - AE
+        mydb.insert_Tag("current_position", "MAIN","None"); //id=267
+        mydb.insert_Tag("= /", "MAIN","None"); //id=268
+        mydb.insert_Tag("X=5", "VARIABLE","None"); //id=269
+        mydb.insert_Tag("Y=6", "VARIABLE","None"); //id=270
+        mydb.insert_Tag("K=2", "VARIABLE","None"); //id=271
+        mydb.insert_Tag("+", "VARIABLE","None"); //id=272
+        mydb.insert_Tag("-", "VARIABLE","None"); //id=273
+        mydb.insert_Tag("X", "VARIABLE","None"); //id=274
+        mydb.insert_Tag("Y ", "VARIABLE","None"); //id=275
+        mydb.insert_Tag("K", "VARIABLE","None"); //id=276
+        //answer - "269,271,274,268,274,273,276,267,268,267,272,274"
+
+        //question 32 class - AF
+        mydb.insert_Tag("current_position", "MAIN","None"); //id=277
+        mydb.insert_Tag("= /", "MAIN","None");     //id=278
+        mydb.insert_Tag("(Y+X)", "MAIN","None"); //id=279
+        mydb.insert_Tag("Y=2", "VARIABLE","None"); //id=280
+        mydb.insert_Tag("X=1", "VARIABLE","None"); //id=281
+        mydb.insert_Tag("K=5", "VARIABLE","None"); //id=282
+        mydb.insert_Tag("+", "VARIABLE","None");   //id=283
+        mydb.insert_Tag("Y=X", "VARIABLE","None"); //id=284
+        mydb.insert_Tag("X=Y", "VARIABLE","None"); //id=285
+        //answer- "281,280,284,277,278,277,283,279"
     }
+
 
 }

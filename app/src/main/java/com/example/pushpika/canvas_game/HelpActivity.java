@@ -1,13 +1,15 @@
 package com.example.pushpika.canvas_game;
 
+import android.app.Activity;
 import android.content.Intent;
+import android.net.Uri;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 
-public class HelpActivity extends AppCompatActivity {
+public class HelpActivity extends Activity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,5 +31,10 @@ public class HelpActivity extends AppCompatActivity {
         Intent intent = new Intent(this, MainActivity.class);
         startActivity(intent);
         finish();
+    }
+
+    public void sendFeedback(View view){
+        Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("http://goo.gl/forms/3uBCOvQZ9ELIp3zs2"));
+        startActivity(intent);
     }
 }

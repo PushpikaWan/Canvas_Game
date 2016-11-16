@@ -1,5 +1,6 @@
 package com.example.pushpika.canvas_game;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -22,6 +23,7 @@ public class ExampleActivity extends AppCompatActivity {
     public void Go_Home(View view){
         Intent intent = new Intent(this, MainActivity.class);
         startActivity(intent);
+        finish();
     }
 
     @Override

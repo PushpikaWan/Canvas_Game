@@ -19,7 +19,7 @@ import android.widget.Toast;
 public class MainActivity extends Activity {
 
     public static int position_width=0,position_height=0,cur_position=1,is_increment=-1,current_pos=1,target_pos=1;
-    public static String target_class="P"; // A for
+    public static String target_class="V"; // A for
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -34,15 +34,20 @@ public class MainActivity extends Activity {
         boolean firstRun = settings.getBoolean("firstRun", true);
 
         //set current class
-        target_class = settings.getString("Current_class","P");
-        current_pos = settings.getInt("current_pos",1);
+        target_class = settings.getString("Current_class","V");
+        current_pos = settings.getInt("Current_pos",1);
+        target_pos = settings.getInt("Current_pos",1);
         cur_position=current_pos;
+
+        Log.v("Data check","successfully");
+        Log.v("happened current share",String.valueOf(settings.getString("Current_class","DefaultClass")));
+        Log.v("happened current share",String.valueOf(settings.getInt("Current_pos",0)));
         if (firstRun) {
             // here run your first-time instructions, for example :
             SharedPreferences settings1 = getSharedPreferences("prefs", 0);
             SharedPreferences.Editor editor = settings1.edit();
-            editor.putString("Current_class","P");
-            editor.putInt("current_pos",1);
+            editor.putString("Current_class","V");
+            editor.putInt("Current_pos",1);
             editor.commit();
 
             Intent intent = new Intent(this,database_data_entry_initial.class);
@@ -59,6 +64,8 @@ public class MainActivity extends Activity {
     @Override
     public void onBackPressed() {
         finish();
+        System.exit(0);
+
     }
 
 
@@ -71,6 +78,7 @@ public class MainActivity extends Activity {
 
     public void Go_Help(View view){
         Intent intent = new Intent(this, HelpActivity.class);
+
         startActivity(intent);
         finish();
     }
