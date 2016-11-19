@@ -51,12 +51,12 @@ public class database_data_entry_initial_new extends Activity {
 
 
         //P
-        mydb.insert_tag_que_assist(1,142);
-        mydb.insert_tag_que_assist(1,143);
-        mydb.insert_tag_que_assist(1,144);
-        mydb.insert_tag_que_assist(1,145);
-        mydb.insert_tag_que_assist(1,146);
-        mydb.insert_tag_que_assist(1,147);
+        mydb.insert_tag_que_assist(12,142);
+        mydb.insert_tag_que_assist(12,143);
+        mydb.insert_tag_que_assist(12,144);
+        mydb.insert_tag_que_assist(12,145);
+        mydb.insert_tag_que_assist(12,146);
+        mydb.insert_tag_que_assist(12,147);
 
         //A
         mydb.insert_tag_que_assist(2,1);
@@ -173,15 +173,15 @@ public class database_data_entry_initial_new extends Activity {
         mydb.insert_tag_que_assist(11,43);
 
         //G
-        mydb.insert_tag_que_assist(12,44);
-        mydb.insert_tag_que_assist(12,45);
-        mydb.insert_tag_que_assist(12,46);
-        mydb.insert_tag_que_assist(12,47);
-        mydb.insert_tag_que_assist(12,48);
-        mydb.insert_tag_que_assist(12,49);
-        mydb.insert_tag_que_assist(12,50);
-        mydb.insert_tag_que_assist(12,51);
-        mydb.insert_tag_que_assist(12,52);
+        mydb.insert_tag_que_assist(1,44);
+        mydb.insert_tag_que_assist(1,45);
+        mydb.insert_tag_que_assist(1,46);
+        mydb.insert_tag_que_assist(1,47);
+        mydb.insert_tag_que_assist(1,48);
+        mydb.insert_tag_que_assist(1,49);
+        mydb.insert_tag_que_assist(1,50);
+        mydb.insert_tag_que_assist(1,51);
+        mydb.insert_tag_que_assist(1,52);
 
         //H
         mydb.insert_tag_que_assist(13,53);
