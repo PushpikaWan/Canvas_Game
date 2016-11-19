@@ -50,7 +50,7 @@ public class MainActivity extends Activity {
             editor.putInt("Current_pos",1);
             editor.commit();
 
-            Intent intent = new Intent(this,database_data_entry_initial.class);
+            Intent intent = new Intent(this,database_data_entry_initial_new.class);
             startActivity(intent);
             finish();
         }

@@ -416,9 +416,6 @@ public class database_data_entry_initial_new extends Activity {
 
 
     public void insertData_Question() {
-        //meewa tika gahanna witarai tiyenne parana prashna walath promotion node , punishment node promotion class punshiment
-        // class  and statring node tika wenas karahan dena lakunu anuwa
-//new questions added.
 //      Q1
         mydb.insert_Question(
                 "1-Goto function",

@@ -27,7 +27,7 @@ import android.widget.Toast;
 public class Question_view extends Activity {
     DatabaseHelper mydb;
     LinearLayout compulsary_words_field,optional_words_field;
-    TextView textView,pos_view;
+    TextView textView,cur_pos_view,next_pos_view;
     String cur_text="",quest_topic="",quest_desc="",cur_seq="",answer_get="",start_node="",promotion_node="",punishment_node="",promotion_class="",punishment_class="";
     String text="",id="";
     String text_arr [] = new String [100];
@@ -40,7 +40,8 @@ public class Question_view extends Activity {
 
 
         setContentView(R.layout.activity_question_view);
-        pos_view = (TextView) findViewById(R.id.position_number);
+        cur_pos_view = (TextView) findViewById(R.id.cur_position_number);
+        next_pos_view = (TextView) findViewById(R.id.next_position_number);
         compulsary_words_field = (LinearLayout) findViewById(R.id.compulsary_words);
         optional_words_field = (LinearLayout) findViewById(R.id.optional_words);
         textView = (TextView) findViewById(R.id.text1);
@@ -153,7 +154,8 @@ public class Question_view extends Activity {
         }
         //add position
         //String pos = (String) pos_view.getText();
-        pos_view.setText("Position - "+start_node);
+        cur_pos_view.setText("Current - "+start_node);
+        next_pos_view.setText("Next - "+ promotion_node);
 
     }
     public void add_tag(String tag, String tag_id){
