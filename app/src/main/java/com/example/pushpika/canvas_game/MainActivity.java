@@ -19,7 +19,7 @@ import android.widget.Toast;
 public class MainActivity extends Activity {
 
     public static int position_width=0,position_height=0,cur_position=1,is_increment=-1,current_pos=1,target_pos=1;
-    public static String target_class="V"; // A for
+    public static String target_class="B"; // A for
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

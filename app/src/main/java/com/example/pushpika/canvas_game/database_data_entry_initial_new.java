@@ -59,36 +59,36 @@ public class database_data_entry_initial_new extends Activity {
         mydb.insert_tag_que_assist(12,147);
 
         //A
-        mydb.insert_tag_que_assist(2,1);
-        mydb.insert_tag_que_assist(2,2);
-        mydb.insert_tag_que_assist(2,3);
-        mydb.insert_tag_que_assist(2,4);
-        mydb.insert_tag_que_assist(2,5);
+        mydb.insert_tag_que_assist(13,1);
+        mydb.insert_tag_que_assist(13,2);
+        mydb.insert_tag_que_assist(13,3);
+        mydb.insert_tag_que_assist(13,4);
+        mydb.insert_tag_que_assist(13,5);
 
         //T
-        mydb.insert_tag_que_assist(3,187);
-        mydb.insert_tag_que_assist(3,188);
-        mydb.insert_tag_que_assist(3,189);
-        mydb.insert_tag_que_assist(3,190);
-        mydb.insert_tag_que_assist(3,191);
-        mydb.insert_tag_que_assist(3,192);
-        mydb.insert_tag_que_assist(3,193);
-        mydb.insert_tag_que_assist(3,194);
-        mydb.insert_tag_que_assist(3,195);
-        mydb.insert_tag_que_assist(3,196);
+        mydb.insert_tag_que_assist(14,187);
+        mydb.insert_tag_que_assist(14,188);
+        mydb.insert_tag_que_assist(14,189);
+        mydb.insert_tag_que_assist(14,190);
+        mydb.insert_tag_que_assist(14,191);
+        mydb.insert_tag_que_assist(14,192);
+        mydb.insert_tag_que_assist(14,193);
+        mydb.insert_tag_que_assist(14,194);
+        mydb.insert_tag_que_assist(14,195);
+        mydb.insert_tag_que_assist(14,196);
 
         //U
-        mydb.insert_tag_que_assist(4,197);
-        mydb.insert_tag_que_assist(4,198);
-        mydb.insert_tag_que_assist(4,199);
-        mydb.insert_tag_que_assist(4,200);
-        mydb.insert_tag_que_assist(4,201);
-        mydb.insert_tag_que_assist(4,202);
-        mydb.insert_tag_que_assist(4,203);
-        mydb.insert_tag_que_assist(4,204);
-        mydb.insert_tag_que_assist(4,205);
-        mydb.insert_tag_que_assist(4,206);
-        mydb.insert_tag_que_assist(4,207);
+        mydb.insert_tag_que_assist(15,197);
+        mydb.insert_tag_que_assist(15,198);
+        mydb.insert_tag_que_assist(15,199);
+        mydb.insert_tag_que_assist(15,200);
+        mydb.insert_tag_que_assist(15,201);
+        mydb.insert_tag_que_assist(15,202);
+        mydb.insert_tag_que_assist(15,203);
+        mydb.insert_tag_que_assist(15,204);
+        mydb.insert_tag_que_assist(15,205);
+        mydb.insert_tag_que_assist(15,206);
+        mydb.insert_tag_que_assist(15,207);
 
         //Q
         mydb.insert_tag_que_assist(5,148);
@@ -184,33 +184,33 @@ public class database_data_entry_initial_new extends Activity {
         mydb.insert_tag_que_assist(1,52);
 
         //H
-        mydb.insert_tag_que_assist(13,53);
-        mydb.insert_tag_que_assist(13,54);
-        mydb.insert_tag_que_assist(13,55);
-        mydb.insert_tag_que_assist(13,56);
-        mydb.insert_tag_que_assist(13,57);
-        mydb.insert_tag_que_assist(13,58);
+        mydb.insert_tag_que_assist(2,53);
+        mydb.insert_tag_que_assist(2,54);
+        mydb.insert_tag_que_assist(2,55);
+        mydb.insert_tag_que_assist(2,56);
+        mydb.insert_tag_que_assist(2,57);
+        mydb.insert_tag_que_assist(2,58);
 
         //I
-        mydb.insert_tag_que_assist(14,59);
-        mydb.insert_tag_que_assist(14,60);
-        mydb.insert_tag_que_assist(14,61);
-        mydb.insert_tag_que_assist(14,62);
-        mydb.insert_tag_que_assist(14,63);
-        mydb.insert_tag_que_assist(14,64);
-        mydb.insert_tag_que_assist(14,65);
-        mydb.insert_tag_que_assist(14,66);
+        mydb.insert_tag_que_assist(3,59);
+        mydb.insert_tag_que_assist(3,60);
+        mydb.insert_tag_que_assist(3,61);
+        mydb.insert_tag_que_assist(3,62);
+        mydb.insert_tag_que_assist(3,63);
+        mydb.insert_tag_que_assist(3,64);
+        mydb.insert_tag_que_assist(3,65);
+        mydb.insert_tag_que_assist(3,66);
 
         //J
-        mydb.insert_tag_que_assist(15,67);
-        mydb.insert_tag_que_assist(15,68);
-        mydb.insert_tag_que_assist(15,69);
-        mydb.insert_tag_que_assist(15,70);
-        mydb.insert_tag_que_assist(15,71);
-        mydb.insert_tag_que_assist(15,72);
-        mydb.insert_tag_que_assist(15,73);
-        mydb.insert_tag_que_assist(15,74);
-        mydb.insert_tag_que_assist(15,75);
+        mydb.insert_tag_que_assist(4,67);
+        mydb.insert_tag_que_assist(4,68);
+        mydb.insert_tag_que_assist(4,69);
+        mydb.insert_tag_que_assist(4,70);
+        mydb.insert_tag_que_assist(4,71);
+        mydb.insert_tag_que_assist(4,72);
+        mydb.insert_tag_que_assist(4,73);
+        mydb.insert_tag_que_assist(4,74);
+        mydb.insert_tag_que_assist(4,75);
 
         //K
         mydb.insert_tag_que_assist(16,76);
